@@ -1,0 +1,48 @@
+{
+  "name": "cafe366",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Boutique de cafés de spécialités",
+  "author": "Knupel <stan@knupel.art>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "shopify",
+    "coffee",
+    "ecommerce",
+    "e-commerce"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
+    "debounce": "^1.2.1",
+    "gatsby": "^4.5.4",
+    "gatsby-plugin-gatsby-cloud": "^4.5.2",
+    "gatsby-plugin-google-analytics": "^4.5.0",
+    "gatsby-plugin-image": "^2.5.2",
+    "gatsby-plugin-react-helmet": "^5.5.0",
+    "gatsby-plugin-sharp": "^4.5.2",
+    "gatsby-plugin-sitemap": "^5.5.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-source-shopify": "^6.5.2",
+    "gatsby-transformer-remark": "^5.5.2",
+    "gatsby-transformer-sharp": "^4.5.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "query-string": "^7.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "shopify-buy": "^2.14.0",
+    "urql": "^2.0.6"
+  }
+}

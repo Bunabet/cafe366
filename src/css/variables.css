@@ -1,0 +1,152 @@
+:root {
+  /* tokens */
+  /* font-family */
+  --font-body: "garage-gothic", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  /**
+  *
+  * COLOR
+  *
+  */
+  /* palette */
+  --black-fade-5: rgba(0, 0, 0, 0.05);
+  --black-fade-40: rgba(0, 0, 0, 0.4);
+
+  --grey-90: #232129;
+  --grey-50: #78757a;
+
+  --green-80: #088413;
+  --green-50-rgb: 55, 182, 53;
+
+  --white: #ffffff;
+
+  --orange_366: #e95a0c;
+  --orange_366-rgb: 233, 90, 12;
+
+  --lin: #faf0e6;
+  --lin_rgb: 250, 240, 230;
+
+  --cafe: #462e01;
+  --cafe_rgb: 70, 46, 1;
+
+  --noisette: #955628;
+  --noisette_rgb: 149, 86, 40;
+
+  /*
+  * background color
+  */
+  --background: var(--white);
+  --background_header: var(--orange_366);
+  --background_footer: var(--orange_366);
+  /* colors */
+  --primary: var(--orange_366);
+
+  --border: var(--black-fade-5);
+
+  /* shadows */
+  /* --shadow: 0 4px 12px rgba(var(--green-50-rgb), 0.5); */
+  --shadow: 0 4px 12px rgba(var(--noisette_rgb), 0.5);
+
+  /* input */
+  --input-background: var(--black-fade-5);
+  --input-background-hover: var(--black-fade-5);
+  --input-border: var(--black-fade-5);
+  --input-text: var(--text-color);
+  --input-text-disabled: var(--black-fade-40);
+  --input-ui: var(--text-color-secondary);
+  --input-ui-active: (--text-color);
+
+  /* text color */
+  --text-color: var(--cafe);
+  --text-color-secondary: var(--orange_366);
+  /* --text-color: var(--grey-90); */
+  /* --text-color-secondary: var(--grey-50); */
+  --text-color-inverted: var(--white);
+
+  /**
+  *
+  * MISC
+  *
+  */
+  /* radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-rounded: 999px;
+
+  /* spacing */
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 48px;
+
+  /* line-height */
+  --solid: 1;
+  --dense: 1.25;
+  --default: 1.5;
+  --loose: 2;
+
+  /* letter-spacing */
+  --tracked: 0.075em;
+  --tight: -0.015em;
+
+  /* font-weight */
+  --body: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+
+  /* font-size */
+  --text-xs: 0.5em;
+  --text-sm: 0.75em;
+  --text-md: 1em;
+  --text-lg: 1.25em;
+  --text-xl: 1.5em;
+  --text-2xl: 2.5em;
+  --text-3xl: 3.5em;
+
+  /* role-based tokens */
+
+  /* transitions */
+  --transition: box-shadow 0.125s ease-in;
+
+  /* text */
+
+  /* size */
+  --text-display: var(--text-2xl);
+  --text-prose: var(--text-md);
+
+  /* size */
+  --size-input: var(--space-3xl);
+  --size-gap: 12px;
+  --size-gutter-raw: var(--space-2xl);
+  --size-gutter: calc(var(--size-gutter-raw) - 12px);
+
+  /* product */
+  --product-grid: 1fr;
+}
+
+/* role-based token adjustments per breakpoint */
+@media (min-width: 640px) {
+  :root {
+    --product-grid: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-display: var(--text-3xl);
+    --text-prose: var(--text-lg);
+    --product-grid: repeat(3, 1fr);
+    --size-gutter-raw: var(--space-3xl);
+    --size-gap: var(--space-2xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --product-grid: repeat(4, 1fr);
+  }
+}

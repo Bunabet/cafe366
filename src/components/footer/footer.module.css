@@ -1,0 +1,41 @@
+.identity {
+  width: 195px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid white; */
+}
+
+.picto_container {
+  width: 40px;
+  /* border: 1px solid white; */
+}
+
+.link_page {
+  cursor: pointer;
+  /* border: 1px solid white; */
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  flex-wrap: wrap;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  color: var(--lin);
+  background-color: var(--background_footer);
+  margin-top: var(--space-3xl);
+  /* border: 1px solid white; */
+}
+
+.className_copyright {
+  color: var(--lin);
+  font-size: var(--text-md);
+  /* padding-top: 5px; */
+  margin-top: 0.2em;
+}

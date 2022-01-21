@@ -1,0 +1,165 @@
+{
+  "info": [
+    {
+      "name": "introduction",
+      "label_en": "Welcome to Café 366, the good shop to buy a speciality coffee",
+      "label_fr": "Bienvenue chez Café 366, votre boutique pour acheter du café de spécialité"
+    },
+    {
+      "name": "legal info",
+      "label_en": "legal info",
+      "label_fr": "mentions légales"
+    },
+    {
+      "name": "about",
+      "label_en": "about",
+      "label_fr": "à propos"
+    },
+    {
+      "name": "copyright",
+      "label_en": "All rights reserved",
+      "label_fr": "Tous droits réservés"
+    },
+    {
+      "name": "empty",
+      "label_en": "Out of stock",
+      "label_fr": "Plus disponible"
+    },
+    {
+      "name": "add",
+      "label_en": "Add to cart",
+      "label_fr": "Ajouter au panier"
+    },
+    {
+      "name": "select",
+      "label_en": "select",
+      "label_fr": "sélection:"
+    },
+    {
+      "name": "your cart",
+      "label_en": "your cart",
+      "label_fr": "votre panier"
+    },
+    {
+      "name": "shipping",
+      "label_en": "shipping",
+      "label_fr": "frais d'envoi"
+    },
+    {
+      "name": "total",
+      "label_en": "total",
+      "label_fr": "total"
+    },
+    {
+      "name": "subtotal",
+      "label_en": "subtotal",
+      "label_fr": "sous-total"
+    },
+    {
+      "name": "taxes",
+      "label_en": "taxes",
+      "label_fr": "taxes"
+    },
+    {
+      "name": "price",
+      "label_en": "price",
+      "label_fr": "prix"
+    },
+    {
+      "name": "checkout",
+      "label_en": "checkout",
+      "label_fr": "validez votre commande"
+    },
+    {
+      "name": "qty",
+      "label_en": "qty",
+      "label_fr": "qté"
+    },
+    {
+      "name": "quantity",
+      "label_en": "quantity",
+      "label_fr": "quantité"
+    },
+    {
+      "name": "calculated",
+      "label_en": "calculated at checkout",
+      "label_fr": "calculé à la commande"
+    },
+    {
+      "name": "cancel",
+      "label_en": "cancel",
+      "label_fr": "annuler"
+    },
+    {
+      "name": "remove",
+      "label_en": "remove",
+      "label_fr": "retirer"
+    },
+    {
+      "name": "clear",
+      "label_en": "clear",
+      "label_fr": "vider"
+    },
+    {
+      "name": "product",
+      "label_en": "product",
+      "label_fr": "produit"
+    },
+    {
+      "name": "cart empty",
+      "label_en": "your cart is empty",
+      "label_fr": "votre panier est vide"
+    },
+    {
+      "name": "empty message",
+      "label_en": "Looks like you haven’t found anything yet. We understand that sometimes it’s hard to chose — maybe this helps:",
+      "label_fr": "Il semble que vous n'ayez encore rien trouvé. Nous comprenons qu'il est parfois difficile de choisir - peut-être que cela vous aidera :"
+    },
+    {
+      "name": "view product",
+      "label_en": "View trending products",
+      "label_fr": "Voir les dernières tendances"
+    }
+  ],
+
+  "country": [
+    {
+      "name": "bolivia",
+      "label_en": "bolivia",
+      "label_fr": "bolivie"
+    },
+    {
+      "name": "colombia",
+      "label_en": "colombia",
+      "label_fr": "colombie"
+    },
+    {
+      "name": "ethiopia",
+      "label_en": "ethiopia",
+      "label_fr": "éthiopie"
+    }
+  ],
+
+  "collection": [
+    {
+      "name": "all products",
+      "label_en": "All products",
+      "label_fr": "Tous nos produits"
+    },
+    {
+      "name": "coffee",
+      "label_en": "Coffee",
+      "label_fr": "Cafés"
+    },
+    {
+      "name": "discovery",
+      "label_en": "Discovery pack",
+      "label_fr": "Offre découverte"
+    },
+    {
+      "name": "accessories",
+      "label_en": "Accessories",
+      "label_fr": "Accessoires"
+    }
+  ]
+}
