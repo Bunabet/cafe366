@@ -1,4 +1,4 @@
-.md_style {
+.txt_style {
   font-size: var(--text-lg);
   line-height: 130%;
   color: var(--orange_366);
@@ -10,6 +10,6 @@
   text-align: justify;
 }
 
-.md_container {
+.container_style {
   background: white;
 }

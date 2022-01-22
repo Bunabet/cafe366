@@ -30,15 +30,15 @@ function build_list(nodes) {
     return null;
   }
   // step one add all elements
-  nodes.map((elem) => {
-    for (let i = 0; i < elem.collections.length; i++) {
-      const obj = {
-        handle: elem.collections[i].handle,
-        title: elem.collections[i].title,
-      };
-      buf.push(obj);
-    }
-  });
+  for (let i = 0; i < nodes.length; i++) {
+    const obj = {
+      handle: nodes[i].handle,
+      title: nodes[i].title,
+    };
+    buf.push(obj);
+  }
+
+
   // build finale list
   for (let i = 0; i < buf.length; i++) {
     let obj_temp = buf[i];
@@ -57,27 +57,23 @@ function build_list(nodes) {
       }
     }
   }
-  // the problem that's reverse all the time at each refresh !!!!
-  return list.reverse();
+  return list;
 }
 
 export default function MenuCollections({ className }) {
   const all = useStaticQuery(
     graphql`
       query {
-        allShopifyProduct {
+        allShopifyCollection {
           nodes {
-            collections {
-              title
-              handle
-            }
+            title
+            handle
           }
         }
       }
     `
   );
-
-  const [elems, set_elems] = useState(build_list(all.allShopifyProduct.nodes));
+  const [elems, set_elems] = useState(build_list(all.allShopifyCollection.nodes));
   return (
     <div className={[navStyle, className].join(" ")}>
       {elems.map((elem) => {

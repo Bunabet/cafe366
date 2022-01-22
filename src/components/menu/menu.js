@@ -24,6 +24,10 @@ export function Menu({ className }) {
     content_by_lang(content.info, "about", "")
   );
 
+  const [pro, set_pro] = useState(
+    content_by_lang(content.info, "pro", "")
+  );
+
   return (
     <nav className={[navStyle, className].join(" ")}>
       <MenuCollections className={className} />
@@ -37,9 +41,17 @@ export function Menu({ className }) {
         {prods}
       </Link>
       <Link
+        key="Pro"
+        className={navLink}
+        to="/misc/pro/"
+        activeClassName={activeLink}
+      >
+        {pro}
+      </Link>
+      <Link
         key="About"
         className={navLink}
-        to="/about/"
+        to="/misc/about/"
         activeClassName={activeLink}
       >
         {about}

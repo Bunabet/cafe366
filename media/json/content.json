@@ -16,6 +16,11 @@
       "label_fr": "à propos"
     },
     {
+      "name": "pro",
+      "label_en": "professionals",
+      "label_fr": "professionnels"
+    },
+    {
       "name": "copyright",
       "label_en": "All rights reserved",
       "label_fr": "Tous droits réservés"

@@ -57,6 +57,20 @@ module.exports = {
     "gatsby-plugin-sitemap",
     // GATSBY CLOUD
     "gatsby-plugin-gatsby-cloud",
+
+    // CONTENTFUL
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        // enableTags: true,
+      },
+    },
+
+
+    // GOOGLE ANALYTIC
     // Add your Google Analytics ID to the .env file to enable
     // Otherwise, this plugin can be removed
     process.env.GOOGLE_ANALYTICS_ID && {
