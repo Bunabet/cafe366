@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import { container_style, txt_style } from "./misc_page.module.css";
 
-export default function About() {
+export default function Where() {
   const brownser_is = typeof window !== "undefined";
   if (brownser_is) {
     localStorage.setItem("lang", "fr");
@@ -17,7 +17,7 @@ export default function About() {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulPageSimple(filter: {titre: {eq: "Café 366 ?"}}) {
+        allContentfulPageSimple(filter: {titre: {eq: "Où nous trouver ?"}}) {
           edges {
             node {
               contentful_id

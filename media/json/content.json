@@ -1,6 +1,11 @@
 {
   "info": [
     {
+      "name": "test",
+      "label_en": "test",
+      "label_fr": "test"
+    },
+    {
       "name": "introduction",
       "label_en": "Welcome to Café 366, the good shop to buy a speciality coffee",
       "label_fr": "Bienvenue chez Café 366, votre boutique pour acheter du café de spécialité"
@@ -19,6 +24,16 @@
       "name": "pro",
       "label_en": "professionals",
       "label_fr": "professionnels"
+    },
+    {
+      "name": "where",
+      "label_en": "Where to find us?",
+      "label_fr": "Où nous trouver ?"
+    },
+    {
+      "name": "press",
+      "label_en": "We talk about us",
+      "label_fr": "On parle de nous"
     },
     {
       "name": "copyright",

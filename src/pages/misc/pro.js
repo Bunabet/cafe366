@@ -18,7 +18,6 @@ export default function About() {
     graphql`
       query {
         allContentfulPageSimple(filter: {titre: {eq: "Professionnels"}}) {
-
           edges {
             node {
               contentful_id
