@@ -1,0 +1,49 @@
+/* inspired from
+ https://medium.com/javascript-in-plain-english/create-a-reusable-sidebar-component-with-react-d75cf48a053a 
+ https://www.youtube.com/watch?v=17g0QZXRfQk
+ */
+ .nav_bar {
+  height: 100% !important;
+  text-align: center;
+  /* border-right: 1px solid; */
+  border-radius: 0;
+  background-color: rgb(var(--orange_366_rgb));
+  /* background-color: rgb(var(--noisette_rgb)); */
+  transition: 0.8s ease;
+}
+
+.toggle_menu {
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  /* background-color: rgb(var(--cafe_rgb)); */
+}
+
+.content_menu_small {
+  background-color: rgb(var(--orange_366_rgb));
+  /* border: solid 1px white; */
+}
+
+/* inspired from https://github.com/aru120/hamburgerNav-demo/blob/main/components/Hamburger.js */
+.hamburger_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.hamburger{
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  /* border: solid 1px white; */
+}
+.burger{
+  width: 2rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: rgb(var(--lin_rgb));
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}

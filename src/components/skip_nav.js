@@ -1,6 +1,6 @@
 import * as React from "react";
 // APP TEMPLATE
-import { navLink } from "./skip_nav.module.css";
+import { nav_link } from "./skip_nav.module.css";
 
 const defaultId = `skip-to-content`;
 
@@ -12,7 +12,7 @@ export function SkipNavLink({
   const id = contentId || defaultId;
 
   return (
-    <a className={navLink} {...props} href={`#${id}`} data-skip-to-content>
+    <a className={nav_link} {...props} href={`#${id}`} data-skip-to-content>
       {children}
     </a>
   );

@@ -1,27 +1,8 @@
 // REACT
 import React from "react";
 import { useState } from "react";
-// OTHER
-import slugify from "@sindresorhus/slugify";
 // GATSBY
 import { graphql, useStaticQuery, Link } from "gatsby";
-// GATSBY SHOPYFY STARTER
-import { navStyle, navLink, activeLink } from "./menu.module.css";
-
-function LinkCollection({ handle, title }) {
-  return (
-    <div>
-      <Link
-        key={handle}
-        className={navLink}
-        to={`/collection/${slugify(handle)}`}
-        activeClassName={activeLink}
-      >
-        {title}
-      </Link>
-    </div>
-  );
-}
 
 function build_list(nodes) {
   let list = [];
@@ -30,6 +11,7 @@ function build_list(nodes) {
     return null;
   }
   // step one add all elements
+	// we do that because there is a lot of differents elements is from a same collection
   for (let i = 0; i < nodes.length; i++) {
     const obj = {
       handle: nodes[i].handle,
@@ -38,8 +20,7 @@ function build_list(nodes) {
     buf.push(obj);
   }
 
-
-  // build finale list
+  // build finale list and add collection only once
   for (let i = 0; i < buf.length; i++) {
     let obj_temp = buf[i];
     if (list.length === 0) {
@@ -60,7 +41,8 @@ function build_list(nodes) {
   return list;
 }
 
-export default function MenuCollections({ className }) {
+
+export default function GetCollections() {
   const all = useStaticQuery(
     graphql`
       query {
@@ -74,13 +56,5 @@ export default function MenuCollections({ className }) {
     `
   );
   const [elems, set_elems] = useState(build_list(all.allShopifyCollection.nodes));
-  return (
-    <div className={[navStyle, className].join(" ")}>
-      {elems.map((elem) => {
-        if (elem.handle !== "frontpage") {
-          return <LinkCollection handle={elem.handle} title={elem.title} />;
-        }
-      })}
-    </div>
-  );
+  return elems;
 }

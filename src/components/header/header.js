@@ -8,9 +8,10 @@ import { StoreContext } from "./../../context/store_context";
 // import Logo from "./../../icons/logo";
 import { Menu } from "./../menu/menu";
 import { CartButton } from "./../cart/cart_button";
+import { header, container, picto } from "./header.module.css";
 import SearchIcon from "./../../icons/search";
 import { Toast } from "./../toast";
-import { header, container, searchButton, menu } from "./header.module.css";
+
 // APP
 import {
   num_to_red,
@@ -55,15 +56,17 @@ export function Header() {
 
   return (
     <div className={container}>
+      {/* barre de navigation */}
       <header className={header}>
-        <Picto src={logo_366} alt="café 366" to="/" stylePicto={picto_logo} />
-        <Menu className={menu} />
+        <Picto src={logo_366} alt="café 366" to="/" stylePicto={picto_logo} classNameContainer={picto}/>
+        <Menu/>
         {/* REASEARH */}
         {/* <Link to="/search" className={searchButton}>
           <SearchIcon />
         </Link> */}
         <CartButton quantity={quantity} />
       </header>
+      
       <Toast show={loading || didJustAddToCart}>
         {!didJustAddToCart ? (
           "Updating…"

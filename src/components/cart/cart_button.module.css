@@ -5,10 +5,10 @@
   width: var(--size-input);
   height: var(--size-input);
   display: flex;
+  /* element position in the box */
   justify-content: center;
   align-items: center;
-  position: relative;
-  align-self: center;
+  /* border: solid 1px white; */
 }
 
 .cartButton:hover {

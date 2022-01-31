@@ -4,65 +4,62 @@
   position: sticky;
   z-index: 1;
   top: 0;
-}
-
-.header {
-  display: grid;
-  width: 100%;
-  padding: var(--size-gap) var(--size-gutter);
-  grid-template-columns: var(--size-input) 1fr min-content min-content;
-  grid-template-areas: "logo navHeader searchButton cartButton";
-  align-items: center;
   background-color: var(--background_header);
 }
 
+/* GLOBAL ARCHITECTURE */
+.header {
+  display: grid;
+  max-width:  var(--width_max);
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--size-gap) var(--size-gutter);
+  grid-template-columns: var(--size-input) 1fr min-content min-content;
+
+  grid-template-areas: "picto menu_big . . cartButton";
+  /* background-color: var(--background_header); */
+}
+
 .header::after {
-  grid-area: navHeader;
+  grid-area: menu;
   content: "";
   display: block;
   width: var(--space-2xl);
   z-index: 1;
   align-self: stretch;
-  /* background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  ); */
   justify-self: flex-end;
 }
 
 @media (max-width: 640px) {
   .header {
-    grid-template-areas:
-      "logo nada searchButton cartButton"
-      "navHeader navHeader navHeader navHeader";
+    grid-template-areas: "picto menu_small cartButton";
   }
 }
 
-/* .logo {
-  display: flex;
-  grid-area: logo;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color-secondary);
+
+/* LOGO / PICTO > BUTTON in this architecture */
+.picto {
+  grid-area: picto;
+  width: var(--size-input);
+  height: var(--size-input);
+  place-items: center;
+  /* border: solid 1px white; */
 }
 
-.logo:hover {
-  color: var(--white);
-  color: var(--text-color);
-}
 
-.logo[aria-current="page"] {
-  color: var(--primary);
-} */
-
-.menu {
-  grid-area: navHeader;
+/* MENU CONTENT */
+.menu_big {
+  grid-area: menu_big;
   align-self: stretch;
+  /* border: solid 1px white; */
 }
 
+.menu_small {
+  grid-area: menu_small;
+}
+
+
+/* SEARCH BUTTON */
 .searchButton {
   color: var(--text-color-secondary);
   grid-area: searchButton;

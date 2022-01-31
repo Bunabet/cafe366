@@ -6,8 +6,6 @@ import { SelectMD } from "../../components/markdown";
 // gatsby
 import { graphql } from "gatsby";
 
-import slugify from "@sindresorhus/slugify";
-
 import { container_style, txt_style } from "./misc_page.module.css";
 
 export default function Page({data}) {

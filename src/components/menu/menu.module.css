@@ -1,38 +1,43 @@
-.navStyle {
+.nav_style {
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow-x: auto;
   white-space: nowrap;
   font-weight: var(--bold);
+
 }
 
-.navLink {
+.nav_link {
   cursor: pointer;
   text-decoration: none;
   height: var(--size-input);
   display: flex;
   color: var(--cafe);
+  /* element position in the box */
+  justify-content: center;
   align-items: center;
   padding-left: var(--space-md);
   padding-right: var(--space-md);
+
   transition: font-size 0.3s;
   font-size: 1.3em;
+  /* border: solid 1px white; */
 }
 
-.navLink:hover {
+.nav_link:hover {
   font-size: 1.6em;
 }
 
-.activeLink,
-.navLink[aria-active="page"] {
+.active_link,
+.nav_link[aria-active="page"] {
   color: var(--lin);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-.activeLink:hover,
-.navLink[aria-active="page"]:hover {
+.active_link:hover,
+.nav_link[aria-active="page"]:hover {
   color: var(--lin);
-}
+} 

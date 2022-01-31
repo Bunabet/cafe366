@@ -4,8 +4,9 @@
   color: var(--orange_366);
   background: white;
   margin: 0 auto;
-  padding: 2em;
-  max-width: 850px;
+  padding: var(--size-gutter);
+  /* padding: 2em; */
+  max-width: var(--width_max);
 
   text-align: justify;
 }

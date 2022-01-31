@@ -1,4 +1,4 @@
-.navLink {
+.nav_link {
   background-color: var(--primary);
   border-bottom-right-radius: var(--radius-sm);
   clip: rect(1px, 1px, 1px, 1px);
@@ -14,7 +14,7 @@
   top: 0;
 }
 
-.navLink:focus {
+.nav_link:focus {
   clip: auto;
   height: auto;
   width: auto;

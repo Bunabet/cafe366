@@ -22,7 +22,7 @@
   --white: #ffffff;
 
   --orange_366: #e95a0c;
-  --orange_366-rgb: 233, 90, 12;
+  --orange_366_rgb: 233, 90, 12;
 
   --lin: #faf0e6;
   --lin_rgb: 250, 240, 230;
@@ -112,9 +112,10 @@
   /* transitions */
   --transition: box-shadow 0.125s ease-in;
 
-  /* text */
+  /* size display */
+  --width_max: 1024px;
 
-  /* size */
+  /* size text */
   --text-display: var(--text-2xl);
   --text-prose: var(--text-md);
 
