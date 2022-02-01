@@ -6,7 +6,7 @@ import { SelectMD } from "../../components/markdown";
 // gatsby
 import { graphql } from "gatsby";
 
-import { container_style, txt_style } from "./misc_page.module.css";
+import { container, article } from "./misc_page.module.css";
 
 export default function Page({data}) {
   const brownser_is = typeof window !== "undefined";
@@ -24,8 +24,8 @@ export default function Page({data}) {
     console.log("data.contenu",node.contenu);
     return (
       <Layout>
-        <div className={container_style}>
-        <SelectMD className={txt_style} node={node.contenu.childMarkdownRemark} />
+        <div className={container}>
+        <SelectMD className={article} node={node.contenu.childMarkdownRemark} />
         </div>
       </Layout>
     );

@@ -29,13 +29,6 @@ export function Menu() {
       <div className={menu_small}>
         <MenuSmall/>
       </div>
-      // <nav className={[nav_style, className].join(" ")}>
-      //   <MenuSmall/>
-      // </nav>
-      // <div>
-      //   <MenuSmall/>
-      // </div>
-      
     )
   } 
 }

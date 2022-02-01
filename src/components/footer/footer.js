@@ -5,6 +5,7 @@ import { useState } from "react";
 import { navigate } from "gatsby";
 // GATSBY SHOPIFY STARTER
 import {
+  container,
   footer,
   className_copyright,
   identity,
@@ -27,6 +28,11 @@ export function Footer() {
   const [legal_info, set_legal_info] = useState(
     content_by_lang(content.info, "legal info", "")
   );
+
+  const [cgv, set_cgv] = useState(
+    content_by_lang(content.info, "cgv", "")
+  );
+
   const [copyright, set_copyright] = useState(
     content_by_lang(content.info, "copyright", "")
   );
@@ -49,31 +55,39 @@ export function Footer() {
     filter: style_filter_data,
   };
 
+
   return (
-    <footer className={footer}>
-      <div className={identity}>
-        <Picto src={logo_366} stylePicto={picto_style} />
-        <div className={className_copyright}>
-          Copyright &copy; {new Date().getFullYear()} · {copyright}
+    <div className={container}>
+      <footer className={footer}>
+        <div className={identity}>
+          <Picto src={logo_366} stylePicto={picto_style} />
+          <div className={className_copyright}>
+            Copyright &copy; 2016-{new Date().getFullYear()} · {copyright}
+          </div>
         </div>
-      </div>
-      <Picto
-        src={picto_facebook}
-        stylePicto={picto_style}
-        classNameContainer={picto_container}
-        alt="facebook"
-        href="https://www.facebook.com/Cafe366torrefaction"
-      />
-      <Picto
-        src={picto_instagram}
-        stylePicto={picto_style}
-        classNameContainer={picto_container}
-        alt="facebook"
-        href="https://www.instagram.com/cafe366/"
-      />
-      <LinkPage className={link_page} where="/legal/legal">
-        {legal_info}
-      </LinkPage>
-    </footer>
+        <Picto
+          src={picto_facebook}
+          stylePicto={picto_style}
+          classNameContainer={picto_container}
+          alt="facebook"
+          href="https://www.facebook.com/Cafe366torrefaction"
+        />
+        <Picto
+          src={picto_instagram}
+          stylePicto={picto_style}
+          classNameContainer={picto_container}
+          alt="facebook"
+          href="https://www.instagram.com/cafe366/"
+        />
+        <div className={link_page}>
+          <LinkPage where="/legal/legal">
+            {legal_info}
+          </LinkPage>
+          <LinkPage where="/legal/cgv">
+            {cgv}
+          </LinkPage>
+        </div>  
+      </footer>
+    </div>
   );
 }

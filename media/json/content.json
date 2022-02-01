@@ -12,8 +12,13 @@
     },
     {
       "name": "legal info",
-      "label_en": "legal info",
-      "label_fr": "mentions légales"
+      "label_en": "Legal info",
+      "label_fr": "Mentions légales"
+    },
+    {
+      "name": "cgv",
+      "label_en": "Terms of service",
+      "label_fr": "Condition générale de vente"
     },
     {
       "name": "about",

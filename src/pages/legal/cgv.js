@@ -7,11 +7,11 @@ import { SelectMD } from "./../../components/markdown";
 
 import { container, article } from "./legal.module.css";
 
-function LegalContentFR() {
+function CGVContentFR() {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulPageLegale(filter: {titre: {eq: "Mentions légales"}}) {
+        allContentfulPageLegale(filter: {titre: {eq: "Conditions générales de vente"}}) {
           edges {
             node {
               contenu {
@@ -42,12 +42,12 @@ function LegalContentFR() {
 }
 
 // markup
-const Legal = () => {
+const CGV = () => {
   return (
     <Layout>
-      <LegalContentFR />
+      <CGVContentFR />
     </Layout>
   );
 };
 
-export default Legal;
+export default CGV;
