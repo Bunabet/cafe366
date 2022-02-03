@@ -8,8 +8,8 @@ import {
   container,
   footer,
   className_copyright,
-  identity,
-  picto_container,
+  resosocio,
+  picto_resosocio_container,
   link_page,
 } from "./footer.module.css";
 // APP
@@ -22,7 +22,7 @@ import content from "./../../../media/json/content.json";
 import { content_by_lang } from "./../../utils/misc";
 import picto_facebook from "./../../../media/picto/facebook_2021.svg";
 import picto_instagram from "./../../../media/picto/instagram_2016.svg";
-import logo_366 from "./../../../media/logo/cafe366_logo_noir.svg";
+// import logo_366 from "./../../../media/logo/cafe366_logo_noir.svg";
 
 export function Footer() {
   const [legal_info, set_legal_info] = useState(
@@ -44,14 +44,11 @@ export function Footer() {
   const [r, set_r] = useState(get_constants());
 
   const style_filter_data = style_num_to_filter(r.LIN);
-  const picto_style = {
-    position: "relative",
-    margin: "auto",
-    // vertical displacement depend of the height of the container
-    // top: "17%",
+
+  const resosocio_style = {
+    margin: "0 auto",
     width: "25px",
     height: "25px",
-
     filter: style_filter_data,
   };
 
@@ -59,30 +56,31 @@ export function Footer() {
   return (
     <div className={container}>
       <footer className={footer}>
-        <div className={identity}>
-          <Picto src={logo_366} stylePicto={picto_style} />
-          <div className={className_copyright}>
-            Copyright &copy; 2016-{new Date().getFullYear()} · {copyright}
-          </div>
+        <div className={className_copyright}>
+          Copyright &copy; Buna Bet / Café 366  2016-{new Date().getFullYear()} {copyright}
         </div>
-        <Picto
+        <div className={resosocio}>
+          <Picto
           src={picto_facebook}
-          stylePicto={picto_style}
-          classNameContainer={picto_container}
+          stylePicto={resosocio_style}
+          classNameContainer={picto_resosocio_container}
           alt="facebook"
           href="https://www.facebook.com/Cafe366torrefaction"
-        />
-        <Picto
-          src={picto_instagram}
-          stylePicto={picto_style}
-          classNameContainer={picto_container}
-          alt="facebook"
-          href="https://www.instagram.com/cafe366/"
-        />
+          />
+          <Picto
+            src={picto_instagram}
+            stylePicto={resosocio_style}
+            classNameContainer={picto_resosocio_container}
+            alt="facebook"
+            href="https://www.instagram.com/cafe366/"
+          />
+        </div>
+        
         <div className={link_page}>
           <LinkPage where="/legal/legal">
             {legal_info}
           </LinkPage>
+          <div><pre> | </pre></div>
           <LinkPage where="/legal/cgv">
             {cgv}
           </LinkPage>

@@ -1,3 +1,16 @@
+
+
+
+/* To improve lighthouse performance */
+/* https://web.dev/font-display/?utm_source=lighthouse&utm_medium=node */
+@font-face {
+  font-family: "Open Sans";
+  /*  Not sure the path is good... I don't understand exactly how that's work */
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+  url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+  font-display: swap;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--text-color);

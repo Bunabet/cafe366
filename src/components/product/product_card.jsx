@@ -10,7 +10,6 @@ import {
   productHeadingStyle,
   productImageStyle,
   productDetailsStyle,
-  productVendorStyle,
   productPrice,
 } from "./product_card.module.css";
 

@@ -5,7 +5,7 @@ import slugify from "@sindresorhus/slugify";
 // GATSBY
 import { graphql } from "gatsby";
 // CAFE 366
-import { Layout } from "../../../components/layout";
+import { Layout } from "../../../components/layout/layout";
 import { ProductListing } from "../../../components/product/product_listing";
 import { Seo } from "../../../components/seo";
 import { MoreButton } from "../../../components/button/button";

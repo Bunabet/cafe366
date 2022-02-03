@@ -124,6 +124,7 @@
   --size-gap: 12px;
   --size-gutter-raw: var(--space-2xl);
   --size-gutter: calc(var(--size-gutter-raw) - 12px);
+  --size_gutter_x2: calc(var(--size-gutter) * 2);
 
   /* product */
   --product-grid: 1fr;

@@ -3,7 +3,7 @@ import * as React from "react";
 // gatsby
 import { Link } from "gatsby";
 // app
-import { Layout } from "./../components/layout";
+import { Layout } from "./../components/layout/layout";
 import { StoreContext } from "./../context/store_context";
 import { LineItem } from "./../components/line_item";
 import { formatPrice } from "./../utils/format_price";

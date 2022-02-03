@@ -14,7 +14,7 @@ import isEqual from "lodash.isequal";
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 // GATSBY SHOPIFY STARTER
-import { Layout } from "../../../components/layout";
+import { Layout } from "../../../components/layout/layout";
 import { StoreContext } from "../../../context/store_context";
 import { AddToCart } from "../../../components/cart/add_to_cart";
 import { NumericInput } from "../../../components/numeric_input";

@@ -1,7 +1,7 @@
 /// REACT
 import * as React from "react";
 // GATSBY SHOPIFY REACT STARTER
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 import { SelectMD } from "../../components/markdown";
 // gatsby
 import { graphql } from "gatsby";

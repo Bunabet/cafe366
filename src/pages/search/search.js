@@ -8,17 +8,17 @@ import debounce from "debounce";
 // GATSBY
 import { graphql } from "gatsby";
 // APP
-import { Layout } from "../components/layout";
-import CrossIcon from "../icons/cross";
-import SortIcon from "../icons/sort";
-import FilterIcon from "../icons/filter";
-import SearchIcon from "../icons/search";
-import { ProductCard } from "../components/product/product_card";
-import { getValuesFromQueryString, useProductSearch } from "../utils/hooks";
-import { getCurrencySymbol } from "../utils/format_price";
-import { Spinner } from "../components/progress";
-import { Filters } from "../components/filters";
-import { SearchProvider } from "../context/search_provider";
+import { Layout } from "../../components/layout/layout";
+import CrossIcon from "../../icons/cross";
+import SortIcon from "../../icons/sort";
+import FilterIcon from "../../icons/filter";
+import SearchIcon from "../../icons/search";
+import { ProductCard } from "../../components/product/product_card";
+import { getValuesFromQueryString, useProductSearch } from "../../utils/hooks";
+import { getCurrencySymbol } from "../../utils/format_price";
+import { Spinner } from "../../components/search/progress";
+import { Filters } from "../../components/filter/filters";
+import { SearchProvider } from "../../context/search_provider";
 import {
   visuallyHidden,
   main,

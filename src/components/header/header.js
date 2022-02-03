@@ -10,7 +10,7 @@ import { Menu } from "./../menu/menu";
 import { CartButton } from "./../cart/cart_button";
 import { header, container, picto } from "./header.module.css";
 import SearchIcon from "./../../icons/search";
-import { Toast } from "./../toast";
+import { Toast } from "./toast";
 
 // APP
 import {

@@ -338,6 +338,9 @@ class Color {
         case b:
           h = (r - g) / d + 4;
           break;
+        default:
+          h = 0;
+          break;
       }
       h /= 6;
     }

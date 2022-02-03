@@ -2,7 +2,7 @@ import * as React from "react";
 // GATSBY
 import { graphql } from "gatsby";
 // APP TEMPLATE
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 import { ProductListing } from "../../components/product/product_listing";
 import { Seo } from "../../components/seo";
 import { MoreButton } from "../../components/button/button";

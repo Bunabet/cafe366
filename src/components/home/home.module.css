@@ -1,0 +1,13 @@
+.container {
+  max-width: 75%;
+}
+
+.intro {
+  padding-left: var(--size-gutter-raw);
+  padding-right: var(--size-gutter-raw);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  /* line-height: var(--dense); */
+  font-size: var(--text-display);
+  color: var(--text-color-secondary);
+}

@@ -1,26 +1,45 @@
-/* inspired from
- https://medium.com/javascript-in-plain-english/create-a-reusable-sidebar-component-with-react-d75cf48a053a 
- https://www.youtube.com/watch?v=17g0QZXRfQk
- */
- .nav_bar {
-  height: 100% !important;
+
+
+/*
+*
+* https://alvarotrigo.com/blog/hamburger-menu-css-responsive/
+* https://www.w3schools.com/css/css3_transitions.asp
+* https://stackoverflow.com/questions/33426539/react-animate-transition-between-components
+* https://blog.bitsrc.io/how-to-implement-smooth-transitions-in-react-bd0497b06b8
+* https://www.sliderrevolution.com/resources/css-hamburger-menu/
+* https://medium.com/javascript-in-plain-english/create-a-reusable-sidebar-component-with-react-d75cf48a053a 
+* https://www.youtube.com/watch?v=17g0QZXRfQk
+*/
+
+
+.nav_bar {
+  height: 0%;
   text-align: center;
-  /* border-right: 1px solid; */
   border-radius: 0;
   background-color: rgb(var(--orange_366_rgb));
-  /* background-color: rgb(var(--noisette_rgb)); */
-  transition: 0.8s ease;
+  transition: 1s ease;
+  /* border-right: 1px solid; */
+}
+
+.nav_bar .show {
+  height: 100%;
+  overflow: visible;
+}
+
+.nav_bar .hidden {
+  height: 0;
+  overflow: hidden;
+}
+
+.nav_bar:active {
+  height: 100%;
+  overflow: visible;
 }
 
 .toggle_menu {
   height: 50px;
   width: 50px;
   z-index: 1;
-  /* background-color: rgb(var(--cafe_rgb)); */
-}
-
-.content_menu_small {
-  background-color: rgb(var(--orange_366_rgb));
   /* border: solid 1px white; */
 }
 

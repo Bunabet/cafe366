@@ -1,8 +1,8 @@
 import * as React from "react";
 import { SkipNavContent, SkipNavLink } from "./skip_nav";
-import { Header } from "./header/header";
-import { Footer } from "./footer/footer";
-import { Seo } from "./seo";
+import { Header } from "../header/header";
+import { Footer } from "../footer/footer";
+import { Seo } from "../seo";
 
 export function Layout({ children }) {
   return (
