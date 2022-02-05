@@ -15,8 +15,6 @@ export default function ProductTypeIndex({
   data: { products },
   pageContext: { productType },
 }) {
-  // console.log("je suis la liste de produits", products);
-  // console.log("je suis le type", productType);
   return (
     <Layout>
       <Seo title={`Category: ${productType}`} />

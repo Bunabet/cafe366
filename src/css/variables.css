@@ -120,11 +120,14 @@
   --text-prose: var(--text-md);
 
   /* size */
+  
   --size-input: var(--space-3xl);
   --size-gap: 12px;
   --size-gutter-raw: var(--space-2xl);
   --size-gutter: calc(var(--size-gutter-raw) - 12px);
   --size_gutter_x2: calc(var(--size-gutter) * 2);
+  --size-picto: 48px;
+  --size_menu_offset: calc(calc(var(--size-picto) * 0.25) * -1);
 
   /* product */
   --product-grid: 1fr;

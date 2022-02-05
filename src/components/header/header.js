@@ -1,6 +1,6 @@
 // REACT
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContext } from "react";
 // GATSBY
 
@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ContextStore } from "../../context/context_store";
 // import Logo from "./../../icons/logo";
 // CAFE 366
-import { ProviderMenu } from "../../context/context_menu";
+// import { ProviderMenu } from "../../context/context_menu";
 import { Menu } from "./../menu/menu";
 import { DisplayMenuSmall } from "./../menu/menu_small";
 import { CartButton } from "./../cart/cart_button";
@@ -58,8 +58,9 @@ export function Header() {
     filter: style_tick,
   };
 
+
   return (
-    <ProviderMenu>
+    <>
       <div>
         <div className={container}>
           {/* barre de navigation */}
@@ -86,6 +87,6 @@ export function Header() {
         </div>
       </div>
       <DisplayMenuSmall/>
-    </ProviderMenu>
+    </>
   );
 }

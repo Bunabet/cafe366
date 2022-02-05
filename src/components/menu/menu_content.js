@@ -11,11 +11,18 @@ import GetPages from "./get_pages";
 import GetCollections from "./get_collections";
 import LinkMenu from "./link_menu";
 
-export default function MenuContent() {
+/**
+ * Here I'm not sure it's necessary to create two compenent
+ * But there is a problem of display the menu when there is a <div></div> instead <Fragment></Fragment> for the big Menu
+ * 
+ */
+
+
+function RenderBig() {
   const [prods, set_prods] = useState(
     content_by_lang(content.collection, "all products", "ALL PRODUCTS")
   );
-  return (
+  return(
     <>
       {GetCollections().map((elem) => {
       if (elem.handle !== "frontpage") {
@@ -33,6 +40,42 @@ export default function MenuContent() {
       {GetPages().map((elem) => {
         return <LinkMenu id={elem.id} path={"/misc/"} title={elem.titre} />;
       })}
-    </>
+    </>)
+}
+
+
+function RenderSmall({className}) {
+  const [prods, set_prods] = useState(
+    content_by_lang(content.collection, "all products", "ALL PRODUCTS")
+  );
+  return(
+    <div className={className}>
+      {GetCollections().map((elem) => {
+      if (elem.handle !== "frontpage") {
+        return <LinkMenu id={elem.handle} path="/collection/" title={elem.title}/>;
+      }
+      })}
+      <Link
+        key="All"
+        className={nav_link}
+        to="/product/"
+        activeClassName={active_link}
+      >
+        {prods}
+      </Link>
+      {GetPages().map((elem) => {
+        return <LinkMenu id={elem.id} path={"/misc/"} title={elem.titre} />;
+      })}
+    </div>
   )
+}
+
+export default function MenuContent({className}) {
+  if(className === undefined) {
+    return <RenderBig/>
+  } else {
+    return(<div className={className}>
+      <RenderSmall/>
+    </div>)
+  }
 }

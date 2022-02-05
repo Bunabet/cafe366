@@ -47,13 +47,6 @@ import {
 } from "./product_page.module.css";
 
 export default function Product({ data: { product, suggestions } }) {
-  // console.log(
-  //   "{ShopifyProduct.handle}",
-  //   "produit",
-  //   product,
-  //   "suggestions",
-  //   suggestions
-  // );
   const {
     options,
     variants,

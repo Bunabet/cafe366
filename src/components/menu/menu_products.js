@@ -8,7 +8,6 @@ import { graphql, useStaticQuery, Link } from "gatsby";
 import { nav_style, nav_link, active_link } from "./menu.module.css";
 
 function LinkProduct({ type }) {
-  // console.log("LinkProduct:", `/product/${slugify(type)}`);
   return (
     <div>
       <Link
@@ -33,8 +32,6 @@ export default function MenuProducts({ className }) {
       }
     }
   `);
-
-  // console.log("product_type", product_type);
 
   return (
     <div className={[nav_style, className].join(" ")}>

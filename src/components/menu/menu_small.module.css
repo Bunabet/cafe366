@@ -10,19 +10,57 @@
 * https://medium.com/javascript-in-plain-english/create-a-reusable-sidebar-component-with-react-d75cf48a053a 
 * https://www.youtube.com/watch?v=17g0QZXRfQk
 * https://github.com/paigen11/paigeniedringhaus.com/blob/master/src/components/Navigation/Navigation.js
+* https://blog.bitsrc.io/animate-a-mobile-hamburger-bar-menu-using-css-and-just-a-hint-of-javascript-f31f928eb992
 * https://github.com/aru120/hamburgerNav-demo/blob/main/components/Hamburger.js
 * https://ramonak.io/posts/react-context-api-update-from-nested-component
 */
 
 
-.menu {
+/* .menu_display {
   height: 0%;
   text-align: center;
   border-radius: 0;
   background-color: rgb(var(--orange_366_rgb));
   transition: 1s ease;
-  /* border: solid 1px white; */
+  border: solid 1px white;
+} 
+*/
+
+
+
+.menu_display {
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(var(--orange_366_rgb));
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  /* animate nav opening details start */
+  opacity: 0;
+  visibility: hidden;
+  /* transition: height 0.5s ease; */
+  transition: opacity 0.5s ease, visibility 0.5s ease, height 0.5s ease;
+  /* transition: opacity 0.75s, visibility 0.75s, height 0.75s; */
+  /* overflow: hidden; */
 }
+
+.menu_small_diplay_text {
+  transform: translate(var(--size_menu_offset), -300px);
+}
+
+.menu_display_open {
+  /* animate nav opening details end */
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+}
+
+
+
+
 
 
 .toggle_menu {

@@ -1,14 +1,13 @@
 // REACT
 import React from "react";
-import { useState, Fragment, useContext } from "react";
-import {useEffect, createRef } from "react";
+import { Fragment, useContext } from "react";
 // CAFÉ 366
 // import { ContextMenu } from "../../context/context_menu";
-import { ContextMenu, ProviderMenu } from "../../context/context_menu";
+import { ContextMenu } from "../../context/context_menu";
 
 import MenuContent from "./menu_content"
 import {  toggle_menu, 
-          menu,  
+          menu_display, menu_display_open, menu_small_diplay_text,
           hamburger, burger, hamburger_container
         } from "./menu_small.module.css";
 // UTILS
@@ -21,18 +20,25 @@ import {  toggle_menu,
 export const DisplayMenuSmall = () => {
   const { menu_small_is } = useContext(ContextMenu);
 
+  const style_menu_close = [menu_display].join(" ");
+  const style_menu_open = [menu_display, menu_display_open].join(" ");
+  if(!menu_small_is) {
+    console.log("style_menu_close", style_menu_close);
+  } else {
+    console.log("style_menu_open", style_menu_open);
+  }
+
   return(
     <div>
       <div>{  menu_small_is ? 
-              // (<div className={[menu, "move"].join(" ")}><MenuContent /></div>) : null
-              (<div className={[menu, "move"].join(" ")}><MenuContent /></div>) :
-              (<div className={[menu, "move"].join(" ")}><MenuContent /></div>)
+              (<div className={style_menu_open}><MenuContent className={menu_small_diplay_text}/></div>) :
+              (<div className={style_menu_close}><MenuContent className={menu_small_diplay_text}/></div>)
             }</div>
-      <style>{`
+      {/* <style>{`
       .move {
         transform: ${menu_small_is ? 'translatey(0)' : 'translatey(-400px)'};
       }
-      `}</style>     
+      `}</style>      */}
     </div>
   )
 }
@@ -62,7 +68,6 @@ const ToggleMenuSmall = () => {
     </button>
   );
 };
-
 
 export const MenuSmallImpl = () => {
   return (
