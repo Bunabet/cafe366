@@ -9,32 +9,21 @@
 * https://www.sliderrevolution.com/resources/css-hamburger-menu/
 * https://medium.com/javascript-in-plain-english/create-a-reusable-sidebar-component-with-react-d75cf48a053a 
 * https://www.youtube.com/watch?v=17g0QZXRfQk
+* https://github.com/paigen11/paigeniedringhaus.com/blob/master/src/components/Navigation/Navigation.js
+* https://github.com/aru120/hamburgerNav-demo/blob/main/components/Hamburger.js
+* https://ramonak.io/posts/react-context-api-update-from-nested-component
 */
 
 
-.nav_bar {
+.menu {
   height: 0%;
   text-align: center;
   border-radius: 0;
   background-color: rgb(var(--orange_366_rgb));
   transition: 1s ease;
-  /* border-right: 1px solid; */
+  /* border: solid 1px white; */
 }
 
-.nav_bar .show {
-  height: 100%;
-  overflow: visible;
-}
-
-.nav_bar .hidden {
-  height: 0;
-  overflow: hidden;
-}
-
-.nav_bar:active {
-  height: 100%;
-  overflow: visible;
-}
 
 .toggle_menu {
   height: 50px;

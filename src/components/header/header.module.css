@@ -4,6 +4,7 @@
   position: sticky;
   z-index: 1;
   top: 0;
+  /* background-color: var(--noisette); */
   background-color: var(--background_header);
 }
 

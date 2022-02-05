@@ -17,11 +17,11 @@ export default function Page({data}) {
   const node = data.contentfulPageSimple;
 
   
-  console.log("data.titre",node.titre);
-  console.log("data.contenu",node.contenu);
+  // console.log("data.titre",node.titre);
+  // console.log("data.contenu",node.contenu);
   if (node.contenu !== undefined) {
-    console.log("data.titre",node.titre);
-    console.log("data.contenu",node.contenu);
+    // console.log("data.titre",node.titre);
+    // console.log("data.contenu",node.contenu);
     return (
       <Layout>
         <div className={container}>

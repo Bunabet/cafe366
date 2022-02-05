@@ -7,7 +7,7 @@ import debounce from "lodash.debounce";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getShopifyImage } from "gatsby-source-shopify";
 // APP
-import { StoreContext } from "../context/store_context";
+import { ContextStore } from "../context/context_store";
 import { formatPrice } from "../utils/format_price";
 import DeleteIcon from "../icons/delete";
 import { NumericInput } from "./numeric_input";
@@ -26,7 +26,7 @@ import content from "./../../media/json/content.json";
 
 export function LineItem({ item }) {
   const { removeLineItem, checkout, updateLineItem, loading } =
-    useContext(StoreContext);
+    useContext(ContextStore);
   const [quantity, setQuantity] = useState(item.quantity);
 
   const [remove_item, set_remove_item] = useState(

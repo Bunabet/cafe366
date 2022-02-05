@@ -1,4 +1,7 @@
 import * as React from "react";
+
+import { useState, useEffect } from "react";
+import { createContext }  from "react";
 import fetch from "isomorphic-fetch";
 import Client from "shopify-buy";
 /**
@@ -35,15 +38,15 @@ const defaultValues = {
   },
 };
 
-export const StoreContext = React.createContext(defaultValues);
+export const ContextStore = createContext(defaultValues);
 
 const isBrowser = typeof window !== `undefined`;
 const localStorageKey = `shopify_checkout_id`;
 
 export const StoreProvider = ({ children }) => {
-  const [checkout, setCheckout] = React.useState(defaultValues.checkout);
-  const [loading, setLoading] = React.useState(false);
-  const [didJustAddToCart, setDidJustAddToCart] = React.useState(false);
+  const [checkout, setCheckout] = useState(defaultValues.checkout);
+  const [loading, setLoading] = useState(false);
+  const [didJustAddToCart, setDidJustAddToCart] = useState(false);
 
   const setCheckoutItem = (checkout) => {
     if (isBrowser) {
@@ -53,7 +56,7 @@ export const StoreProvider = ({ children }) => {
     setCheckout(checkout);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const initializeCheckout = async () => {
       const existingCheckoutID = isBrowser
         ? localStorage.getItem(localStorageKey)
@@ -129,7 +132,7 @@ export const StoreProvider = ({ children }) => {
   };
 
   return (
-    <StoreContext.Provider
+    <ContextStore.Provider
       value={{
         ...defaultValues,
         addVariantToCart,
@@ -141,6 +144,6 @@ export const StoreProvider = ({ children }) => {
       }}
     >
       {children}
-    </StoreContext.Provider>
+    </ContextStore.Provider>
   );
 };

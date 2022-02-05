@@ -22,7 +22,7 @@
   "dependencies": {
     "@sindresorhus/slugify": "^2.1.0",
     "debounce": "^1.2.1",
-    "gatsby": "^4.6.1",
+    "gatsby": "^4.6.2",
     "gatsby-plugin-gatsby-cloud": "^4.6.0",
     "gatsby-plugin-google-analytics": "^4.6.0",
     "gatsby-plugin-image": "^2.6.0",
@@ -44,6 +44,6 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
     "shopify-buy": "^2.14.0",
-    "urql": "^2.1.2"
+    "urql": "^2.1.3"
   }
 }

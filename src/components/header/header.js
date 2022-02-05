@@ -1,12 +1,16 @@
 // REACT
 import * as React from "react";
 import { useState } from "react";
+import { useContext } from "react";
 // GATSBY
 
 // GATSBY SHOPIFY STARTER
-import { StoreContext } from "./../../context/store_context";
+import { ContextStore } from "../../context/context_store";
 // import Logo from "./../../icons/logo";
+// CAFE 366
+import { ProviderMenu } from "../../context/context_menu";
 import { Menu } from "./../menu/menu";
+import { DisplayMenuSmall } from "./../menu/menu_small";
 import { CartButton } from "./../cart/cart_button";
 import { header, container, picto } from "./header.module.css";
 import SearchIcon from "./../../icons/search";
@@ -30,7 +34,7 @@ import logo_366 from "./../../../media/logo/cafe366_logo_noir.svg";
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } =
-    React.useContext(StoreContext);
+    useContext(ContextStore);
 
   const items = checkout ? checkout.lineItems : [];
 
@@ -55,28 +59,33 @@ export function Header() {
   };
 
   return (
-    <div className={container}>
-      {/* barre de navigation */}
-      <header className={header}>
-        <Picto src={logo_366} alt="café 366" to="/" stylePicto={picto_logo} classNameContainer={picto}/>
-        <Menu/>
-        {/* REASEARH */}
-        {/* <Link to="/search" className={searchButton}>
-          <SearchIcon />
-        </Link> */}
-        <CartButton quantity={quantity} />
-      </header>
-      
-      <Toast show={loading || didJustAddToCart}>
-        {!didJustAddToCart ? (
-          "Updating…"
-        ) : (
-          <>
-            Added to cart
-            <Picto src={tick} alt="ok" stylePicto={picto_tick} />
-          </>
-        )}
-      </Toast>
-    </div>
+    <ProviderMenu>
+      <div>
+        <div className={container}>
+          {/* barre de navigation */}
+          <header className={header}>
+            <Picto src={logo_366} alt="café 366" to="/" stylePicto={picto_logo} classNameContainer={picto}/>
+            <Menu/>
+            {/* REASEARH */}
+            {/* <Link to="/search" className={searchButton}>
+              <SearchIcon />
+            </Link> */}
+            <CartButton quantity={quantity} />
+          </header>
+          
+          <Toast show={loading || didJustAddToCart}>
+            {!didJustAddToCart ? (
+              "Updating…"
+            ) : (
+              <>
+                Added to cart
+                <Picto src={tick} alt="ok" stylePicto={picto_tick} />
+              </>
+            )}
+          </Toast>
+        </div>
+      </div>
+      <DisplayMenuSmall/>
+    </ProviderMenu>
   );
 }

@@ -4,7 +4,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 // app
 import { Layout } from "./../components/layout/layout";
-import { StoreContext } from "./../context/store_context";
+import { ContextStore } from "./../context/context_store";
 import { LineItem } from "./../components/line_item";
 import { formatPrice } from "./../utils/format_price";
 import {
@@ -28,7 +28,7 @@ import { content_by_lang } from "./../utils/misc";
 import content from "./../../media/json/content.json";
 
 export default function CartPage() {
-  const { checkout, loading } = React.useContext(StoreContext);
+  const { checkout, loading } = React.useContext(ContextStore);
   const emptyCart = checkout.lineItems.length === 0;
 
   const handleCheckout = () => {
