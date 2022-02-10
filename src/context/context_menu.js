@@ -8,7 +8,8 @@ import { useState } from "react";
 
 const setting = {
   menu_small_is: false,
-	set_open_menu_small: () => {},
+	swap_menu_small:()=>{},
+	swicth_off_menu_small:()=>{}
 };
 
 export const ContextMenu = createContext(setting);
@@ -20,14 +21,19 @@ export const ProviderMenu = ({children}) => {
    * */
 	const [menu_small_is, set_open] = useState(false);
 
-	const set_open_menu_small = () => {
+	const swap_menu_small = () => {
 		set_open(!menu_small_is);
 		// set_open(menu_small_is === true ? false : true);
+	}
+
+	const switch_off_menu_small = () => {
+		set_open(false);
 	}
  
 	const setting = {
 		menu_small_is,
-		set_open_menu_small,
+		swap_menu_small,
+		switch_off_menu_small,
 	};
 
 	return(<ContextMenu.Provider value={setting}>{children}</ContextMenu.Provider>)

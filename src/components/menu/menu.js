@@ -1,11 +1,13 @@
 // REACT
 import * as React from "react";
+import { useContext } from "react";
 // GATSBY SHOPYFY STARTER
 import { nav_style } from "./menu.module.css";
 import { menu_big, menu_small } from "../header/header.module.css";
 // CAFÉ 366
 import MenuSmall from "./menu_small";
 import MenuContent from "./menu_content";
+import { ContextMenu } from "../../context/context_menu";
 // UTILS
 import { Get_window } from "../../utils/canvas";
 
@@ -17,8 +19,10 @@ import { Get_window } from "../../utils/canvas";
 
 
 export function Menu() {
+  const { switch_off_menu_small } = useContext(ContextMenu);
   let res = Get_window();
   if(res[0] > 640) {
+    switch_off_menu_small();
     return (
       <nav className={[nav_style, menu_big].join(" ")}>
         <MenuContent/> 

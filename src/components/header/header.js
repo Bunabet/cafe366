@@ -8,11 +8,11 @@ import { useContext } from "react";
 import { ContextStore } from "../../context/context_store";
 // import Logo from "./../../icons/logo";
 // CAFE 366
-// import { ProviderMenu } from "../../context/context_menu";
 import { Menu } from "./../menu/menu";
-import { DisplayMenuSmall } from "./../menu/menu_small";
+// import { DisplayMenuSmall } from "./../menu/menu_small";
 import { CartButton } from "./../cart/cart_button";
 import { header, container, picto } from "./header.module.css";
+import "./header.module.css";
 import SearchIcon from "./../../icons/search";
 import { Toast } from "./toast";
 
@@ -58,7 +58,6 @@ export function Header() {
     filter: style_tick,
   };
 
-
   return (
     <>
       <div>
@@ -86,7 +85,6 @@ export function Header() {
           </Toast>
         </div>
       </div>
-      <DisplayMenuSmall/>
     </>
   );
 }

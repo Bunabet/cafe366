@@ -1,0 +1,21 @@
+/**
+* https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout
+*/
+
+/**
+* THIS CSS IS NOT USE FOR THE MOMENT
+*/
+.container_content {
+	transform: translateY(400px);
+}
+
+.container {
+	transform: translateY(400px);
+}
+
+/* @media (max-width: 640px) {
+  .container {
+    grid-template-areas: "picto menu_small cartButton";
+  }
+} */
+

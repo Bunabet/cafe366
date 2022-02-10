@@ -16,39 +16,25 @@
 */
 
 
-/* .menu_display {
-  height: 0%;
-  text-align: center;
-  border-radius: 0;
-  background-color: rgb(var(--orange_366_rgb));
-  transition: 1s ease;
-  border: solid 1px white;
-} 
-*/
-
-
-
 .menu_display {
   z-index: 1;
   width: 100%;
   height: 0;
   display: flex;
-  flex-direction: column;
   background-color: rgb(var(--orange_366_rgb));
-  align-items: center;
+  align-items: start; /* That's work without, it's just in cas !!! */
   justify-content: center;
   position: fixed;
   /* animate nav opening details start */
   opacity: 0;
   visibility: hidden;
-  /* transition: height 0.5s ease; */
-  transition: opacity 0.5s ease, visibility 0.5s ease, height 0.5s ease;
-  /* transition: opacity 0.75s, visibility 0.75s, height 0.75s; */
-  /* overflow: hidden; */
+  transition: opacity 0.5s ease, visibility 0.5s ease, height 1s ease;
+  /* border: solid 1px white; */
 }
 
-.menu_small_diplay_text {
-  transform: translate(var(--size_menu_offset), -300px);
+.offset_text {
+  transform: translateX(var(--size_menu_offset));
+  /* border: solid 1px white; */
 }
 
 .menu_display_open {

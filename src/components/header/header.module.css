@@ -1,11 +1,16 @@
+
 .container {
   display: flex;
   align-items: center;
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  /* height:100%; */
+  /* position: sticky; */
   z-index: 1;
   top: 0;
   /* background-color: var(--noisette); */
   background-color: var(--background_header);
+  /* border: solid 1px white; */
 }
 
 /* GLOBAL ARCHITECTURE */
@@ -19,10 +24,12 @@
 
   grid-template-areas: "picto menu_big . . cartButton";
   /* background-color: var(--background_header); */
+  /* border: solid 1px white; */
 }
 
+/* Ici, je ne comprends pas bien à quoi cela sert */
 .header::after {
-  grid-area: menu;
+  grid-area: menu_big;
   content: "";
   display: block;
   width: var(--space-2xl);
@@ -41,8 +48,8 @@
 /* LOGO / PICTO > BUTTON in this architecture */
 .picto {
   grid-area: picto;
-  width: var(--size-input);
-  height: var(--size-input);
+  width: var(--size-picto);
+  height: var(--size-picto);
   place-items: center;
   /* border: solid 1px white; */
 }

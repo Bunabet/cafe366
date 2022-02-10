@@ -44,12 +44,12 @@ function RenderBig() {
 }
 
 
-function RenderSmall({className}) {
+function RenderSmall() {
   const [prods, set_prods] = useState(
     content_by_lang(content.collection, "all products", "ALL PRODUCTS")
   );
   return(
-    <div className={className}>
+    <div>
       {GetCollections().map((elem) => {
       if (elem.handle !== "frontpage") {
         return <LinkMenu id={elem.handle} path="/collection/" title={elem.title}/>;
@@ -70,11 +70,11 @@ function RenderSmall({className}) {
   )
 }
 
-export default function MenuContent({className}) {
-  if(className === undefined) {
+export default function MenuContent({className, style}) {
+  if(className === undefined && style === undefined) {
     return <RenderBig/>
-  } else {
-    return(<div className={className}>
+  } else  {
+    return(<div style={style} className={className}>
       <RenderSmall/>
     </div>)
   }

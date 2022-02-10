@@ -142,11 +142,7 @@
 
 @media (min-width: 1024px) {
   :root {
-    --text-display: var(--text-3xl);
-    --text-prose: var(--text-lg);
     --product-grid: repeat(3, 1fr);
-    --size-gutter-raw: var(--space-3xl);
-    --size-gap: var(--space-2xl);
   }
 }
 
