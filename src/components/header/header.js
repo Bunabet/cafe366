@@ -14,7 +14,7 @@ import { CartButton } from "./../cart/cart_button";
 import { header, container, picto } from "./header.module.css";
 import "./header.module.css";
 import SearchIcon from "./../../icons/search";
-import { Toast } from "./toast";
+import { Toast as AnimationSelect } from "./toast";
 
 // APP
 import {
@@ -73,7 +73,7 @@ export function Header() {
             <CartButton quantity={quantity} />
           </header>
           
-          <Toast show={loading || didJustAddToCart}>
+          <AnimationSelect show={loading || didJustAddToCart}>
             {!didJustAddToCart ? (
               "Updating…"
             ) : (
@@ -82,7 +82,7 @@ export function Header() {
                 <Picto src={tick} alt="ok" stylePicto={picto_tick} />
               </>
             )}
-          </Toast>
+          </AnimationSelect>
         </div>
       </div>
     </>

@@ -10,7 +10,6 @@ import {  toggle_menu,
           menu_display, menu_display_open, 
           offset_text,
           hamburger, burger, hamburger_container,
-          bloca, blocb, blocc 
         } from "./menu_small.module.css";
 // UTILS
 // import { Get_window } from "../../utils/canvas"
@@ -78,13 +77,4 @@ export default function MenuSmall() {
 }
 
 
-export function Test() {
-  return (<><div>
-      <div className={bloca}>derrière la montagne</div>
-      <div className={blocb}>à l'abris du soleil et du vent</div>
-      <div className={blocc}>pour se rapprocher des étoiles et du ciel</div>
-      <div className={bloca}>derrière la montagne</div>
-      <div className={blocb}>à l'abris du soleil et du vent</div>
-      <div className={blocc}>pour se rapprocher des étoiles et du ciel</div>
-  </div></>)
-}
+

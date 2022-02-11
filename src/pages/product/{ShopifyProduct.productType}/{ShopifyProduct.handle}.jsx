@@ -1,7 +1,7 @@
 /**
  * Fiche produit
- * v 0.1.0
- * 2021-2021
+ * v 0.2.0
+ * 2021-2022
  *
  */
 // REACT
@@ -10,6 +10,7 @@ import { CgChevronRight as ChevronIcon } from "react-icons/cg";
 import { useState, useContext, useCallback, useEffect } from "react";
 // MISC
 import isEqual from "lodash.isequal";
+import sanitizeHtml from 'sanitize-html';
 // GATSBY
 import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
@@ -27,10 +28,10 @@ import { formatPrice } from "../../../utils/format_price";
 import { content_by_lang } from "../../../utils/misc";
 
 import {
-  productBox,
+  prod_box,
   container,
   header,
-  productImageWrapper,
+  prod_img_wrapper,
   productImageList,
   productImageListItem,
   scrollForMore,
@@ -39,12 +40,39 @@ import {
   priceValue,
   selectVariant,
   labelFont,
-  breadcrumb,
+  collection_link,
   tagList,
   addToCartStyle,
   metaSection,
-  productDescription,
+  prod_description,
 } from "./product_page.module.css";
+
+// https://www.npmjs.com/package/sanitize-html#what-are-the-default-options
+// https://stackoverflow.com/questions/59467152/how-to-render-html-code-in-strings-of-a-gatsby-config-file
+function Description({className, content_html}) {
+  const content_clean = sanitizeHtml(content_html, {
+    allowedTags: ['br'],
+  })
+  return(<div className={className} dangerouslySetInnerHTML={{__html: content_clean}}/>)
+}
+
+// The Search part don't work must be work on it for the future
+function MetaSection({product}) {
+  return(
+    <div className={metaSection}>
+      <span className={labelFont}>Type</span>
+      <span className={tagList}>
+        <Link to={product.productTypeSlug}>{product.productType}</Link>
+      </span>
+      <span className={labelFont}>Tags</span>
+        <span className={tagList}>
+        {product.tags.map((tag) => (
+          <Link to={`/search/search?=${tag}`}>{tag}</Link>
+        ))}
+      </span>
+    </div>
+  ) 
+}
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -53,7 +81,7 @@ export default function Product({ data: { product, suggestions } }) {
     variants: [initialVariant],
     priceRangeV2,
     title,
-    description,
+    descriptionHtml,
     images,
     images: [firstImage],
   } = product;
@@ -126,14 +154,14 @@ export default function Product({ data: { product, suggestions } }) {
       {firstImage ? (
         <Seo
           title={title}
-          description={description}
+          description={sanitizeHtml(descriptionHtml)}
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
       <div className={container}>
-        <div className={productBox}>
+        <div className={prod_box}>
           {hasImages && (
-            <div className={productImageWrapper}>
+            <div className={prod_img_wrapper}>
               <div
                 role="group"
                 aria-label="gallery"
@@ -171,12 +199,13 @@ export default function Product({ data: { product, suggestions } }) {
             <span className={noImagePreview}>No Preview image</span>
           )}
           <div>
-            <div className={breadcrumb}>
+            <div className={collection_link}>
+              <ChevronIcon size={20} />
               <Link to={product.productTypeSlug}>{product.productType}</Link>
-              <ChevronIcon size={12} />
+              
             </div>
             <h1 className={header}>{title}</h1>
-            <p className={productDescription}>{description}</p>
+            <Description className={prod_description} content_html={descriptionHtml}></Description>
             <h2 className={priceValue}>
               <span>{price}</span>
             </h2>
@@ -215,18 +244,7 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
-            <div className={metaSection}>
-              <span className={labelFont}>Type</span>
-              <span className={tagList}>
-                <Link to={product.productTypeSlug}>{product.productType}</Link>
-              </span>
-              <span className={labelFont}>Tags</span>
-              <span className={tagList}>
-                {product.tags.map((tag) => (
-                  <Link to={`/search?t=${tag}`}>{tag}</Link>
-                ))}
-              </span>
-            </div>
+            {/* <MetaSection product={product}/> */}
           </div>
         </div>
       </div>
@@ -238,7 +256,7 @@ export const query = graphql`
   query ($id: String!, $productType: String!) {
     product: shopifyProduct(id: { eq: $id }) {
       title
-      description
+      descriptionHtml
       productType
       productTypeSlug: gatsbyPath(
         filePath: "/product/{ShopifyProduct.productType}"

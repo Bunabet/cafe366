@@ -106,6 +106,9 @@
   --text-xl: 1.5em;
   --text-2xl: 2.5em;
   --text-3xl: 3.5em;
+  /* size text */
+  --text-display: var(--text-2xl);
+  --text-prose: var(--text-lg);
 
   /* role-based tokens */
 
@@ -115,9 +118,7 @@
   /* size display */
   --width_max: 1024px;
 
-  /* size text */
-  --text-display: var(--text-2xl);
-  --text-prose: var(--text-md);
+
 
   /* size */
   

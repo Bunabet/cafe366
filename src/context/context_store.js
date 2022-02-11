@@ -29,7 +29,7 @@ const defaultValues = {
   loading: false,
   onOpen: () => {},
   onClose: () => {},
-  addVariantToCart: () => {},
+  add_item_to_cart: () => {},
   removeLineItem: () => {},
   updateLineItem: () => {},
   client,
@@ -83,7 +83,7 @@ export const StoreProvider = ({ children }) => {
     initializeCheckout();
   }, []);
 
-  const addVariantToCart = (variantId, quantity) => {
+  const add_item_to_cart = (variantId, quantity) => {
     setLoading(true);
 
     const checkoutID = checkout.id;
@@ -135,7 +135,7 @@ export const StoreProvider = ({ children }) => {
     <ContextStore.Provider
       value={{
         ...defaultValues,
-        addVariantToCart,
+        add_item_to_cart,
         removeLineItem,
         updateLineItem,
         checkout,

@@ -11,6 +11,16 @@ export function CartButton({ quantity }) {
       className={cartButton}
     >
       <CartIcon />
+       {/* 
+       
+       
+       
+       
+       C'EST LA LE PROBLEM du logo de quantité qui n'est pas au bon endroit
+       
+       
+       
+       */}
       {quantity > 0 && <div className={badge}>{quantity}</div>}
     </Link>
   );
