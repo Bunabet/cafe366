@@ -1,27 +1,31 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import CartIcon from "../../icons/cart";
-import { cartButton, badge } from "./cart_button.module.css";
+// import { Link } from "gatsby";
+// import CartIcon from "../../icons/cart";
+// import { cartButton, badge } from "./cart_button.module.css";
+import { quantity } from "./cart.module.css";
 
-export function CartButton({ quantity }) {
+import { Panier }  from "./../../icons/picto";
+
+function DisplayQuantity({num}) {
+  return <div>{num > 0 && <div className={quantity}>{num}</div>}</div>
+}
+
+export function CartButton({ quantity, style, classNameContainer }) {
   return (
-    <Link
-      aria-label={`Shopping Cart with ${quantity} items`}
-      to="/cart"
-      className={cartButton}
-    >
-      <CartIcon />
-       {/* 
-       
-       
-       
-       
-       C'EST LA LE PROBLEM du logo de quantité qui n'est pas au bon endroit
-       
-       
-       
-       */}
-      {quantity > 0 && <div className={badge}>{quantity}</div>}
-    </Link>
+    <div >
+      <Panier stylePicto={style} classNameContainer={classNameContainer}/>
+      <DisplayQuantity num={quantity}/>
+    </div>
   );
 }
+
+
+//   export function CartButton({ quantity, style, classNameContainer }) {
+//     return (
+//       <div>
+//         <Panier stylePicto={style} classNameContainer={classNameContainer}/>
+//         <DisplayQuantity num={quantity}/>
+//       </div>
+//     );
+// }
+

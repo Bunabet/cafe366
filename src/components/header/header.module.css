@@ -22,7 +22,7 @@
   padding: var(--size-gap) var(--size-gutter);
   grid-template-columns: var(--size-input) 1fr min-content min-content;
 
-  grid-template-areas: "picto menu_big . . cartButton";
+  grid-template-areas: "logo menu_big . . cart";
   /* background-color: var(--background_header); */
   /* border: solid 1px white; */
 }
@@ -40,16 +40,24 @@
 
 @media (max-width: 640px) {
   .header {
-    grid-template-areas: "picto menu_small cartButton";
+    grid-template-areas: "logo menu_small cart";
   }
 }
 
 
 /* LOGO / PICTO > BUTTON in this architecture */
-.picto {
-  grid-area: picto;
-  width: var(--size-picto);
-  height: var(--size-picto);
+.logo {
+  grid-area: logo;
+  width: var(--size_logo);
+  height: var(--size_logo);
+  place-items: center;
+  /* border: solid 1px white; */
+}
+
+.cart {
+  grid-area: cart;
+  width: var(--size_cart);
+  height: var(--size_cart);
   place-items: center;
   /* border: solid 1px white; */
 }

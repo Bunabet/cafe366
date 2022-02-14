@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState } from "react";
 // cafe 366
 import { ContextStore } from "../../context/context_store";
-import { addToCart as className_add_to_cart } from "./add_to_cart.module.css";
+import { addToCart as className_add_to_cart } from "./cart.module.css";
 // app
 import { content_by_lang } from "../../utils/misc";
 // CAFE 366

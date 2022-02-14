@@ -1,3 +1,10 @@
+/* CART 
+* 2022 
+* v 0.1.0
+*/
+
+
+/* ADD TO CART */
 .addToCart {
   display: flex;
   flex-direction: row;
@@ -15,4 +22,15 @@
 
 .addToCart:hover {
   box-shadow: var(--shadow);
+}
+
+/* CART */
+
+.quantity {
+  height: 0;
+  color: var(--text-color-inverted);
+  font-size: var(--text-xl);
+  font-weight: var(--bold);
+  text-align: center;
+  transform: translatey(calc(calc(var(--size_cart) *-1) + calc(var(--text-xl) *0.28)));
 }

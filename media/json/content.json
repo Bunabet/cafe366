@@ -56,6 +56,16 @@
       "label_fr": "Ajouter au panier"
     },
     {
+      "name": "added",
+      "label_en": "Cart is updated",
+      "label_fr": "Votre panier est à jour"
+    },
+    {
+      "name": "update",
+      "label_en": "Cart updating...",
+      "label_fr": "Mise à jour du panier..."
+    },
+    {
       "name": "select",
       "label_en": "select",
       "label_fr": "sélection:"

@@ -9,31 +9,19 @@ import { ContextStore } from "../../context/context_store";
 // import Logo from "./../../icons/logo";
 // CAFE 366
 import { Menu } from "./../menu/menu";
-// import { DisplayMenuSmall } from "./../menu/menu_small";
 import { CartButton } from "./../cart/cart_button";
-import { header, container, picto } from "./header.module.css";
+import { header, container, logo, cart } from "./header.module.css";
 import "./header.module.css";
 import SearchIcon from "./../../icons/search";
-import { Toast as AnimationSelect } from "./toast";
+import { Toast} from "./toast";
+import { Select, SelectAnimation } from "./select";
 
-// APP
-import {
-  num_to_red,
-  num_to_green,
-  num_to_blue,
-  num_to_hue,
-  num_to_saturation,
-  num_to_brightness,
-} from "./../../utils/color";
-import { Picto } from "./../../components/button/button";
-import { style_num_to_filter } from "./../../utils/color";
-import { get_constants } from "./../../utils/misc";
 // CAFE 366
-import tick from "./../../../media/picto/tick.svg";
-import logo_366 from "./../../../media/logo/cafe366_logo_noir.svg";
+import { Logo }  from "./../../icons/picto";
+
 
 export function Header() {
-  const { checkout, loading, didJustAddToCart } =
+  const { checkout, loading, did_just_add_to_cart } =
     useContext(ContextStore);
 
   const items = checkout ? checkout.lineItems : [];
@@ -46,16 +34,11 @@ export function Header() {
    *  https://blog.logrocket.com/using-localstorage-react-hooks/
    *  https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
    */
-  const [r, set_r] = useState(get_constants());
 
-  const style_logo = style_num_to_filter(r.LIN);
-  const picto_logo = {
-    filter: style_logo,
-  };
-
-  const style_tick = style_num_to_filter(r.CAFE);
-  const picto_tick = {
-    filter: style_tick,
+  const cart_style = {
+    margin: "0 auto",
+    width: "25px",
+    height: "25px",
   };
 
   return (
@@ -64,25 +47,18 @@ export function Header() {
         <div className={container}>
           {/* barre de navigation */}
           <header className={header}>
-            <Picto src={logo_366} alt="café 366" to="/" stylePicto={picto_logo} classNameContainer={picto}/>
+          <Logo classNameContainer={logo}/>
             <Menu/>
             {/* REASEARH */}
             {/* <Link to="/search" className={searchButton}>
               <SearchIcon />
             </Link> */}
-            <CartButton quantity={quantity} />
+            <CartButton quantity={quantity} style={cart_style} classNameContainer={cart}/>
           </header>
           
-          <AnimationSelect show={loading || didJustAddToCart}>
-            {!didJustAddToCart ? (
-              "Updating…"
-            ) : (
-              <>
-                Added to cart
-                <Picto src={tick} alt="ok" stylePicto={picto_tick} />
-              </>
-            )}
-          </AnimationSelect>
+          <Select show={loading || did_just_add_to_cart} >
+            <SelectAnimation  just_add={did_just_add_to_cart}/>
+          </Select>
         </div>
       </div>
     </>

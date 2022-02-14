@@ -46,7 +46,7 @@ const localStorageKey = `shopify_checkout_id`;
 export const StoreProvider = ({ children }) => {
   const [checkout, setCheckout] = useState(defaultValues.checkout);
   const [loading, setLoading] = useState(false);
-  const [didJustAddToCart, setDidJustAddToCart] = useState(false);
+  const [did_just_add_to_cart, setDidJustAddToCart] = useState(false);
 
   const setCheckoutItem = (checkout) => {
     if (isBrowser) {
@@ -140,7 +140,7 @@ export const StoreProvider = ({ children }) => {
         updateLineItem,
         checkout,
         loading,
-        didJustAddToCart,
+        did_just_add_to_cart,
       }}
     >
       {children}
