@@ -1,3 +1,8 @@
+/* Window
+* 2021_2022 
+* v 0.1.1
+*/
+
 import { useState, useRef, useLayoutEffect } from "react"
 
 export function set_canvas(canvas) {
@@ -26,4 +31,12 @@ export function Get_window() {
     }
   }, [canvas])
   return canvas
+}
+
+export function Get_width() {
+  return Get_window()[0];
+}
+
+export function Get_height() {
+  return Get_window()[1];
 }

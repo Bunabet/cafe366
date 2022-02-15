@@ -1,19 +1,16 @@
 // REACT
 import * as React from "react";
-import { useState, useEffect } from "react";
 import { useContext } from "react";
 // GATSBY
 
 // GATSBY SHOPIFY STARTER
 import { ContextStore } from "../../context/context_store";
-// import Logo from "./../../icons/logo";
 // CAFE 366
 import { Menu } from "./../menu/menu";
 import { CartButton } from "./../cart/cart_button";
 import { header, container, logo, cart } from "./header.module.css";
 import "./header.module.css";
 import SearchIcon from "./../../icons/search";
-import { Toast} from "./toast";
 import { Select, SelectAnimation } from "./select";
 
 // CAFE 366

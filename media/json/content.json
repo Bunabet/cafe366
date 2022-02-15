@@ -56,6 +56,11 @@
       "label_fr": "Ajouter au panier"
     },
     {
+      "name": "add_min",
+      "label_en": "Add",
+      "label_fr": "Ajouter"
+    },
+    {
       "name": "added",
       "label_en": "Cart is updated",
       "label_fr": "Votre panier est à jour"
@@ -72,8 +77,8 @@
     },
     {
       "name": "your cart",
-      "label_en": "your cart",
-      "label_fr": "votre panier"
+      "label_en": "Your cart",
+      "label_fr": "Votre panier"
     },
     {
       "name": "shipping",

@@ -1,16 +1,20 @@
+/* ADD TO CART 
+* 2021-2022 
+* v 0.1.1
+*/
+// REACT
 import * as React from "react";
-import { useState } from "react";
-// cafe 366
+import { useState, useContext, useEffect } from "react";
+// CAFE 366
 import { ContextStore } from "../../context/context_store";
 import { addToCart as className_add_to_cart } from "./cart.module.css";
-// app
 import { content_by_lang } from "../../utils/misc";
-// CAFE 366
 import content from "../../../media/json/content.json";
-// import { content_by_lang } from "../utils/misc";
+
+import {Get_width} from "./../../utils/canvas.js";
 
 export function AddToCart({ variantId, quantity, available, ...props }) {
-  const { add_item_to_cart, loading } = React.useContext(ContextStore);
+  const { add_item_to_cart, loading } = useContext(ContextStore);
 
   function add_to_cart(e) {
     e.preventDefault();
@@ -21,6 +25,16 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
   const [empty, set_empty] = useState(
     content_by_lang(content.info, "empty", "")
   );
+  
+  const width = Get_width();
+  useEffect(() => {
+    if(width < 400) {
+      set_add(content_by_lang(content.info, "add_min", ""));
+    } else {
+      set_add(content_by_lang(content.info, "add", ""));
+    }
+  }, [width])
+  
 
   return (
     <button

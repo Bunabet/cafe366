@@ -17,62 +17,37 @@ import { graphql, Link } from "gatsby";
 // GATSBY SHOPIFY STARTER
 import { Layout } from "../../../components/layout/layout";
 import { ContextStore } from "../../../context/context_store";
-import { AddToCart } from "../../../components/cart/add_to_cart";
-import { NumericInput } from "../../../components/numeric_input";
 
 import { Seo } from "../../../components/seo";
 // CAFE 366
-import content from "../../../../media/json/content.json";
+
+// The Search part don't work must be work on it for the future
+// import { MetaSection } from "./meta_section.js"; 
 // APP
 import { formatPrice } from "../../../utils/format_price";
-import { content_by_lang } from "../../../utils/misc";
+// PRODUCT 366
+import { AddUnits } from "./add_units.js";
+import { Selection } from "./selection.js";
 
 import {
   prod_box,
   container,
-  header,
+  title_design,
   prod_img_wrapper,
   productImageList,
   productImageListItem,
   scrollForMore,
   noImagePreview,
-  optionsWrapper,
   priceValue,
-  selectVariant,
-  labelFont,
   collection_link,
-  tagList,
-  addToCartStyle,
-  metaSection,
   prod_description,
 } from "./product_page.module.css";
+import { MdOutlineBorderStyle } from "react-icons/md";
 
-// https://www.npmjs.com/package/sanitize-html#what-are-the-default-options
-// https://stackoverflow.com/questions/59467152/how-to-render-html-code-in-strings-of-a-gatsby-config-file
-function Description({className, content_html}) {
-  const content_clean = sanitizeHtml(content_html, {
-    allowedTags: ['br'],
-  })
-  return(<div className={className} dangerouslySetInnerHTML={{__html: content_clean}}/>)
-}
 
-// The Search part don't work must be work on it for the future
-function MetaSection({product}) {
-  return(
-    <div className={metaSection}>
-      <span className={labelFont}>Type</span>
-      <span className={tagList}>
-        <Link to={product.productTypeSlug}>{product.productType}</Link>
-      </span>
-      <span className={labelFont}>Tags</span>
-        <span className={tagList}>
-        {product.tags.map((tag) => (
-          <Link to={`/search/search?=${tag}`}>{tag}</Link>
-        ))}
-      </span>
-    </div>
-  ) 
-}
+
+
+
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -88,7 +63,6 @@ export default function Product({ data: { product, suggestions } }) {
   const { client } = useContext(ContextStore);
 
   const [variant, setVariant] = useState({ ...initialVariant });
-  const [quantity, setQuantity] = useState(1);
 
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant;
@@ -145,10 +119,6 @@ export default function Product({ data: { product, suggestions } }) {
   const hasImages = images.length > 0;
   const hasMultipleImages = true || images.length > 1;
 
-  const [select, set_select] = useState(
-    content_by_lang(content.info, "select", "")
-  );
-
   return (
     <Layout>
       {firstImage ? (
@@ -204,53 +174,47 @@ export default function Product({ data: { product, suggestions } }) {
               <Link to={product.productTypeSlug}>{product.productType}</Link>
               
             </div>
-            <h1 className={header}>{title}</h1>
+            <h1 className={title_design}>{title}</h1>
+            <Order 
+              priceValue={priceValue}
+              price={price}
+              hasVariants={hasVariants}
+              options={options}
+              handleOptionChange={handleOptionChange}
+              productVariant={productVariant}
+              available={available}
+            />
             <Description className={prod_description} content_html={descriptionHtml}></Description>
-            <h2 className={priceValue}>
-              <span>{price}</span>
-            </h2>
-            <fieldset className={optionsWrapper}>
-              {hasVariants &&
-                options.map(({ id, name, values }, index) => (
-                  <div className={selectVariant} key={id}>
-                    <select
-                      aria-label="Variants"
-                      onChange={(event) => handleOptionChange(index, event)}
-                    >
-                      <option value="">{`${select} ${name}`}</option>
-                      {/* <option value="">{`Select ${name}`}</option> */}
-                      {values.map((value) => (
-                        <option value={value} key={`${name}-${value}`}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                ))}
-            </fieldset>
-            <div className={addToCartStyle}>
-              <NumericInput
-                aria-label="Quantity"
-                onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
-                onDecrement={() => setQuantity((q) => Math.max(1, q - 1))}
-                onChange={(event) => setQuantity(event.currentTarget.value)}
-                value={quantity}
-                min="1"
-                max="20"
-              />
-              <AddToCart
-                variantId={productVariant.storefrontId}
-                quantity={quantity}
-                available={available}
-              />
-            </div>
-            {/* <MetaSection product={product}/> */}
           </div>
         </div>
       </div>
     </Layout>
   );
 }
+
+// OTHER
+// https://www.npmjs.com/package/sanitize-html#what-are-the-default-options
+// https://stackoverflow.com/questions/59467152/how-to-render-html-code-in-strings-of-a-gatsby-config-file
+function Description({className, content_html}) {
+  const content_clean = sanitizeHtml(content_html, {
+    allowedTags: ['br'],
+  })
+  return(<div className={className} dangerouslySetInnerHTML={{__html: content_clean}}/>)
+}
+
+
+
+function Order(props) {
+  return(<>
+  <h2 className={props.priceValue}>
+    <span>{props.price}</span>
+  </h2>
+  <Selection hasVariants={props.hasVariants} options={props.options} handleOptionChange={props.handleOptionChange}/>
+  <AddUnits productVariant= {props.productVariant} available={props.available}/>
+  </>)
+}
+
+
 
 export const query = graphql`
   query ($id: String!, $productType: String!) {

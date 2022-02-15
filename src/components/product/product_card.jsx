@@ -66,7 +66,6 @@ export function ProductCard({ product, eager }) {
         <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
       )}
       <div className={productDetailsStyle}>
-        {/* <div className={productVendorStyle}>{vendor}</div> */}
         <h2 as="h2" className={productHeadingStyle}>
           {title}
         </h2>

@@ -5,15 +5,16 @@ import { Link } from "gatsby";
 // app
 import { Layout } from "./../components/layout/layout";
 import { ContextStore } from "./../context/context_store";
-import { LineItem } from "./../components/line_item";
+import { LineItem } from "../components/line_item/line_item";
 import { formatPrice } from "./../utils/format_price";
 import {
+  container,
   table,
   wrap,
   totals,
   grandTotal,
   summary,
-  checkoutButton,
+  checkout_button,
   collapseColumn,
   labelColumn,
   imageHeader,
@@ -50,7 +51,7 @@ export default function CartPage() {
 
   return (
     <Layout>
-      <div className={wrap}>
+      <div className={container}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
             <h1 className={emptyStateHeading}>{cart_empty}</h1>
@@ -78,31 +79,6 @@ export default function CartPage() {
                 {checkout.lineItems.map((item) => (
                   <LineItem item={item} key={item.id} />
                 ))}
-                {/* 
-                <tr className={summary}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>{subtotal}</td>
-                  <td className={totals}>
-                    {formatPrice(
-                      checkout.subtotalPriceV2.currencyCode,
-                      checkout.subtotalPriceV2.amount
-                    )}
-                  </td>
-                </tr> */}
-                {/* <tr className={summary}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Taxes</td>
-                  <td className={totals}>
-                    {formatPrice(
-                      checkout.totalTaxV2.currencyCode,
-                      checkout.totalTaxV2.amount
-                    )}
-                  </td>
-                </tr> */}
                 <tr className={summary}>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
@@ -129,7 +105,7 @@ export default function CartPage() {
             <button
               onClick={handleCheckout}
               disabled={loading}
-              className={checkoutButton}
+              className={checkout_button}
             >
               {checkout_mess}
             </button>

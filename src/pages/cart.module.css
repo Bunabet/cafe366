@@ -5,6 +5,16 @@
   padding: var(--space-2xl) 0 var(--space-2xl);
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 var(--size-gutter-raw);
+  max-width: var(--width_max);
+  margin: 0 auto;
+}
+
+
 .table {
   flex: 1;
   max-width: 1024px;
@@ -28,12 +38,7 @@
   display: contents;
 }
 
-.wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding: 0 var(--size-gutter-raw);
-}
+
 
 .totals,
 .table th.totals {
@@ -50,13 +55,13 @@
   font-weight: var(--semibold);
 }
 
-.checkoutButton {
+.checkout_button {
   align-items: center;
   background: var(--primary);
   border-radius: var(--radius-md);
   color: var(--text-color-inverted);
   display: flex;
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: var(--semibold);
   height: var(--size-input);
   justify-content: center;
@@ -67,7 +72,7 @@
   transition: var(--transition);
 }
 
-.checkoutButton:hover {
+.checkout_button:hover {
   box-shadow: var(--shadow);
 }
 

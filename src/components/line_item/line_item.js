@@ -1,3 +1,9 @@
+/**
+ * LIGNE PRODUIT DESIGN PANIER
+ * v 0.1.1
+ * 2021-2022
+ *
+ */
 // REACT
 import * as React from "react";
 import { useState, useContext, useMemo, useCallback } from "react";
@@ -7,11 +13,11 @@ import debounce from "lodash.debounce";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getShopifyImage } from "gatsby-source-shopify";
 // APP
-import { ContextStore } from "../context/context_store";
-import { formatPrice } from "../utils/format_price";
-import DeleteIcon from "../icons/delete";
-import { NumericInput } from "./numeric_input";
-import { content_by_lang } from "./../utils/misc";
+import { ContextStore } from "../../context/context_store";
+import { formatPrice } from "../../utils/format_price";
+import DeleteIcon from "../../icons/delete";
+import { NumericInput } from "../numeric_input";
+import { content_by_lang } from "../../utils/misc";
 // CSS
 import {
   title,
@@ -22,7 +28,7 @@ import {
 } from "./line_item.module.css";
 
 // CAFE 366
-import content from "./../../media/json/content.json";
+import content from "../../../media/json/content.json";
 
 export function LineItem({ item }) {
   const { removeLineItem, checkout, updateLineItem, loading } =
