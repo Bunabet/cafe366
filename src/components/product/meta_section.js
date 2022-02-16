@@ -10,17 +10,17 @@ import * as React from "react";
 // GATSBY
 import { Link } from "gatsby";
 
-import { labelFont, tagList, metaSection } from "./product_page.module.css";
+import { label_font, tag_list, metadata_section } from "./product_order.module.css";
 // The Search part don't work must be work on it for the future
 export function MetaSection({product}) {
   return(
-    <div className={metaSection}>
-      <span className={labelFont}>Type</span>
-      <span className={tagList}>
+    <div className={metadata_section}>
+      <span className={label_font}>Type</span>
+      <span className={tag_list}>
         <Link to={product.productTypeSlug}>{product.productType}</Link>
       </span>
-      <span className={labelFont}>Tags</span>
-        <span className={tagList}>
+      <span className={label_font}>Tags</span>
+        <span className={tag_list}>
         {product.tags.map((tag) => (
           <Link to={`/search/search?=${tag}`}>{tag}</Link>
         ))}

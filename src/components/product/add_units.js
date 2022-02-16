@@ -9,16 +9,16 @@
 import * as React from "react";
 import {useState} from "react";
 // CAFE 366
-import { AddToCart } from "../../../components/cart/add_to_cart";
-import { NumericInput } from "../../../components/numeric_input";
-import { addToCartStyle } from "./product_page.module.css";
+import { AddToCart } from "../cart/add_to_cart";
+import { NumericInput } from "../numeric_input";
+import { add_to_cart } from "./product_order_page.module.css";
 
 
 export function AddUnits({productVariant, available}) {
   const [quantity, setQuantity] = useState(1);
 
   return (
-		<div className={addToCartStyle}>
+		<div className={add_to_cart}>
 			<NumericInput
 				aria-label="Quantity"
 				onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}

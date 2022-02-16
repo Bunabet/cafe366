@@ -9,13 +9,10 @@
 import * as React from "react";
 import {useState} from "react";
 // STYLE
-import {
-  optionsWrapper,
-  selectVariant,
-} from "./product_page.module.css";
+import { options_wrapper, select_variant } from "./product_order_page.module.css";
 // CAFE 366
-import content from "../../../../media/json/content.json";
-import { content_by_lang } from "../../../utils/misc";
+import content from "../../../media/json/content.json";
+import { content_by_lang } from "../../utils/misc";
 
 
 export function Selection({hasVariants, options, handleOptionChange}) {
@@ -23,10 +20,10 @@ export function Selection({hasVariants, options, handleOptionChange}) {
     content_by_lang(content.info, "select", "")
   );
 
-  return ( <fieldset className={optionsWrapper}>
+  return ( <fieldset className={options_wrapper}>
     {hasVariants &&
       options.map(({ id, name, values }, index) => (
-        <div className={selectVariant} key={id}>
+        <div className={select_variant} key={id}>
           <select
             aria-label="Variants"
             onChange={(event) => handleOptionChange(index, event)}

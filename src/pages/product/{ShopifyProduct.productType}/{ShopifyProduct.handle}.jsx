@@ -26,8 +26,8 @@ import { Seo } from "../../../components/seo";
 // APP
 import { formatPrice } from "../../../utils/format_price";
 // PRODUCT 366
-import { AddUnits } from "./add_units.js";
-import { Selection } from "./selection.js";
+import { AddUnits } from "../../../components/product/add_units.js";
+import { Selection } from "../../../components/product/selection.js";
 
 import {
   prod_box,
