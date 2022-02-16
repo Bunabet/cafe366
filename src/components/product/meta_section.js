@@ -10,7 +10,7 @@ import * as React from "react";
 // GATSBY
 import { Link } from "gatsby";
 
-import { label_font, tag_list, metadata_section } from "./product_order.module.css";
+import { label_font, tag_list, metadata_section } from "./product_order_page.module.css";
 // The Search part don't work must be work on it for the future
 export function MetaSection({product}) {
   return(

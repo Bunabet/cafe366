@@ -67,7 +67,7 @@
   font-size: var(--text-display);
   font-weight: var(--bold);
   line-height: var(--dense);
-  color: var(--primary);
+  color: var(--color_primary);
 }
 
 .priceValue {

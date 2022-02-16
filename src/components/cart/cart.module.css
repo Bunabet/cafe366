@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: row;
   color: var(--text-color-inverted);
-  background-color: var(--primary);
+  background-color: var(--color_primary);
   align-self: flex-end;
   padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius-md);

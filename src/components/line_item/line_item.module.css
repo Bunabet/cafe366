@@ -4,15 +4,16 @@
  * 2021-2022
  *
  */
+
  .title {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: var(--semibold);
   line-height: var(--solid);
-  padding-bottom: var(--space-md);
 }
 
 .variant {
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
+  color: var(--color_primary);
   padding-bottom: var(--space-sm);
 }
 
@@ -31,13 +32,13 @@
   text-align: right;
 }
 
-.priceColumn,
+.price_column,
 .totals {
   display: none;
 }
 
 @media (min-width: 640px) {
-  .priceColumn,
+  .price_column,
   .totals {
     display: block;
   }

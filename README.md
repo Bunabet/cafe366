@@ -2,7 +2,7 @@
 
 Coffee shop online
 
-To see the work deploy
+Here it's the read me on the working branch !
 
-https://cafe366stan.gatsbyjs.io/
+To see [deployed shop](https://cafe366stan.gatsbyjs.io/)
 

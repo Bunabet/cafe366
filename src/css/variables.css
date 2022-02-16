@@ -40,7 +40,7 @@
   --background_header: var(--orange_366);
   --background_footer: var(--orange_366);
   /* colors */
-  --primary: var(--orange_366);
+  --color_primary: var(--orange_366);
 
   --border: var(--black-fade-5);
 

@@ -1,5 +1,5 @@
 .nav_link {
-  background-color: var(--primary);
+  background-color: var(--color_primary);
   border-bottom-right-radius: var(--radius-sm);
   clip: rect(1px, 1px, 1px, 1px);
   color: var(--text-color-inverted);

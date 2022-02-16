@@ -20,11 +20,12 @@ import { NumericInput } from "../numeric_input";
 import { content_by_lang } from "../../utils/misc";
 // CSS
 import {
+  container,
   title,
   remove,
   variant,
   totals,
-  priceColumn,
+  price_column,
 } from "./line_item.module.css";
 
 // CAFE 366
@@ -117,7 +118,7 @@ export function LineItem({ item }) {
           </button>
         </div>
       </td>
-      <td className={priceColumn}>{price}</td>
+      <td className={price_column}>{price}</td>
       <td>
         <NumericInput
           disabled={loading}

@@ -88,8 +88,8 @@
 }
 
 .checkbox:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
+  border-color: var(--color_primary);
+  background-color: var(--color_primary);
 }
 
 .checkbox::before {

@@ -90,5 +90,5 @@
 }
 
 .searchButton[aria-current="page"] {
-  color: var(--primary);
+  color: var(--color_primary);
 }

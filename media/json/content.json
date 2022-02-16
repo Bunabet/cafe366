@@ -82,8 +82,8 @@
     },
     {
       "name": "shipping",
-      "label_en": "shipping",
-      "label_fr": "frais d'envoi"
+      "label_en": "Shipping",
+      "label_fr": "Frais d'envoi"
     },
     {
       "name": "total",
@@ -122,8 +122,8 @@
     },
     {
       "name": "calculated",
-      "label_en": "calculated at checkout",
-      "label_fr": "calculé à la commande"
+      "label_en": "calculated at the next step",
+      "label_fr": "calculés à l'étape suivante"
     },
     {
       "name": "cancel",
@@ -156,9 +156,14 @@
       "label_fr": "Il semble que vous n'ayez encore rien trouvé. Nous comprenons qu'il est parfois difficile de choisir - peut-être que cela vous aidera :"
     },
     {
-      "name": "view product",
+      "name": "view trending",
       "label_en": "View trending products",
       "label_fr": "Voir les dernières tendances"
+    },
+    {
+      "name": "view all",
+      "label_en": "View all products",
+      "label_fr": "Voir tous nos produits"
     }
   ],
 

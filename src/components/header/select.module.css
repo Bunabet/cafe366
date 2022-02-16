@@ -1,5 +1,5 @@
 .select_wrapper {
-  background-color: var(--primary);
+  background-color: var(--color_primary);
   color: var(--text-color-inverted);
   width: max-content;
   position: absolute;
