@@ -41,7 +41,8 @@
   /* animate nav opening details end */
   opacity: 1;
   visibility: visible;
-  height: 100vh;
+  /* height: 89vh; */
+  height: calc(100vh - var(--height_header));
 }
 
 

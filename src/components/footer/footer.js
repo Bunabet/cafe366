@@ -1,8 +1,6 @@
 // REACT
 import * as React from "react";
 import { useState } from "react";
-// GATSBY
-import { navigate } from "gatsby";
 // GATSBY SHOPIFY STARTER
 import {
   container,
@@ -23,17 +21,10 @@ import { Facebook, Instagram }  from "./../../icons/picto";
 
 
 export function Footer() {
-  const [legal_info, set_legal_info] = useState(
-    content_by_lang(content.info, "legal info", "")
-  );
+  const legal_info = useState(content_by_lang(content.info, "legal info", ""));
+  const cgv = useState(content_by_lang(content.info, "cgv", ""));
+  const copyright = useState(content_by_lang(content.info, "copyright", ""));
 
-  const [cgv, set_cgv] = useState(
-    content_by_lang(content.info, "cgv", "")
-  );
-
-  const [copyright, set_copyright] = useState(
-    content_by_lang(content.info, "copyright", "")
-  );
   /**
    *  Deal with SSR Gatsby rendering problem with class Object need to pass by useState, useEffect
    *  https://blog.logrocket.com/using-localstorage-react-hooks/

@@ -20,10 +20,8 @@ import {  toggle_menu,
 
 export const DisplayMenuSmall = () => {
   const { menu_small_is } = useContext(ContextMenu);
-
   const style_menu_close = [menu_display].join(" ");
   const style_menu_open = [menu_display, menu_display_open].join(" ");
-
   return(
     <div>
       <div>{  menu_small_is ? 
@@ -33,6 +31,8 @@ export const DisplayMenuSmall = () => {
     </div>
   )
 }
+
+
 
 const ToggleMenuSmall = () => {
   const { menu_small_is, swap_menu_small } = useContext(ContextMenu);

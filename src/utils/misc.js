@@ -12,7 +12,7 @@ export function SetConstants(r, brownser_is) {
     if (brownser_is) {
       localStorage.setItem("constants", JSON.stringify(r));
     }
-  }, ["constants", r]);
+  }, ["constants", brownser_is, r]);
 }
 
 export function get_constants() {

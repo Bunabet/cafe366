@@ -19,7 +19,6 @@ export function ProductCard({ product, eager }) {
     priceRangeV2,
     slug,
     images: [firstImage],
-    vendor,
     storefrontImages,
   } = product;
 

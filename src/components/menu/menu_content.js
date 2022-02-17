@@ -19,9 +19,8 @@ import LinkMenu from "./link_menu";
 
 
 function RenderBig() {
-  const [prods, set_prods] = useState(
-    content_by_lang(content.collection, "all products", "ALL PRODUCTS")
-  );
+  const prods = useState(content_by_lang(content.collection, "all products", "ALL PRODUCTS"));
+
   return(
     <>
       {GetCollections().map((elem) => {
@@ -45,9 +44,8 @@ function RenderBig() {
 
 
 function RenderSmall() {
-  const [prods, set_prods] = useState(
-    content_by_lang(content.collection, "all products", "ALL PRODUCTS")
-  );
+  const prods = useState(content_by_lang(content.collection, "all products", "ALL PRODUCTS"));
+
   return(
     <div>
       {GetCollections().map((elem) => {

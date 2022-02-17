@@ -1,12 +1,9 @@
 // REACT
 import * as React from "react";
-import { useState } from "react";
 // gatsby
 import { useStaticQuery, graphql } from "gatsby";
 // CAFE 366
 import { container, intro } from "./home.module.css";
-import content from "../../../media/json/content.json";
-import { get_lang} from "../../utils/misc";
 
 export function Introduction() {
   // need to pass to tag sorting for the futur to remove type :

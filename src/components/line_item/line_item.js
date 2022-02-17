@@ -20,7 +20,6 @@ import { NumericInput } from "../numeric_input";
 import { content_by_lang } from "../../utils/misc";
 // CSS
 import {
-  container,
   title,
   remove,
   variant,
@@ -36,9 +35,7 @@ export function LineItem({ item }) {
     useContext(ContextStore);
   const [quantity, setQuantity] = useState(item.quantity);
 
-  const [remove_item, set_remove_item] = useState(
-    content_by_lang(content.info, "remove", "")
-  );
+  const remove_item = useState(content_by_lang(content.info, "remove", ""));
 
   const variantImage = {
     ...item.variant.image,

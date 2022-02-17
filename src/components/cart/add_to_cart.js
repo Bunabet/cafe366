@@ -22,9 +22,7 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
   }
 
   const [add, set_add] = useState(content_by_lang(content.info, "add", ""));
-  const [empty, set_empty] = useState(
-    content_by_lang(content.info, "empty", "")
-  );
+  const empty = useState(content_by_lang(content.info, "empty", ""));
   
   const width = Get_width();
   useEffect(() => {

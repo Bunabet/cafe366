@@ -1,8 +1,7 @@
 // REACT
-import React from "react";
 import { useState } from "react";
 // GATSBY
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 function build_list(nodes) {
   let list = [];
@@ -55,6 +54,7 @@ export default function GetCollections() {
       }
     `
   );
+  // don't remove the unused function from useState that's cause undefined missing
   const [elems, set_elems] = useState(build_list(all.allShopifyCollection.nodes));
   return elems;
 }

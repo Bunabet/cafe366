@@ -16,9 +16,10 @@ import { content_by_lang } from "../../utils/misc";
 
 
 export function Selection({hasVariants, options, handleOptionChange}) {
-  const [select, set_select] = useState(
-    content_by_lang(content.info, "select", "")
-  );
+  const select = useState(content_by_lang(content.info, "select", ""));
+  // const [select, set_select] = useState(
+  //   content_by_lang(content.info, "select", "")
+  // );
 
   return ( <fieldset className={options_wrapper}>
     {hasVariants &&

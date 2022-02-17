@@ -43,13 +43,8 @@ export function SelectAnimation({just_add}) {
     height: "25px",
   };
 
-	const [added, set_added] = useState(
-    content_by_lang(content.info, "added", "")
-  );
-
-  const [updated, set_updated] = useState(
-    content_by_lang(content.info, "update", "")
-  );
+	const added = useState(content_by_lang(content.info, "added", ""));
+  const updated = useState(content_by_lang(content.info, "update", ""));
 
 		// the code is not really clear for me here, between javascript and jsx
 	return (<div className={animation}>{!just_add ? (

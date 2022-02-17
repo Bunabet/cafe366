@@ -1,11 +1,9 @@
 // REACT
-import React from "react";
 import { useState } from "react";
 // GATSBY
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 function build_list(edges) {
-  let list = [];
   let buf = [];
   if (edges === undefined) {
     return null;
@@ -37,6 +35,7 @@ export default function GetPages() {
       }
     `
   );
+  // don't remove the unused function from useState that's cause undefined missing
   const [elems, set_elems] = useState(build_list(all.allContentfulPageSimple.edges));
   return elems;
 }

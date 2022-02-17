@@ -131,6 +131,7 @@
   --size_cart: 48px;
   --size_menu_offset: calc(calc(var(--size_logo) * 0.25) * -1);
   --size_select: 125px;
+  --height_header: 75px;
 
   /* product */
   --product-grid: 1fr;

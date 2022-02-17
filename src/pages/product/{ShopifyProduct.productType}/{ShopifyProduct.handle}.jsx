@@ -42,10 +42,6 @@ import {
   collection_link,
   prod_description,
 } from "./product_page.module.css";
-import { MdOutlineBorderStyle } from "react-icons/md";
-
-
-
 
 
 
