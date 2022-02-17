@@ -16,9 +16,17 @@ import { Panier }  from "./../../icons/picto";
 //   height: "25px",
 // };
 
+const style_test = {
+  gridArea: "cart",
+  width: "var(--size_cart)",
+  height: "var(--size_cart)",
+  placeItems: "center"
+}
+
 export function CartButton({ quantity, classNameContainer }) {
   return (
-    <div className={classNameContainer}>
+    <div style={style_test}>
+    {/* <div className={classNameContainer}> */}
       <Panier/>
       <div className={quantity_design}>{quantity}</div>
       {/* {quantity > 0 ? <div className={quantity_design}>{quantity}</div> : null} */}
