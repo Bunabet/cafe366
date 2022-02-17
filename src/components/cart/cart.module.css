@@ -1,6 +1,6 @@
 /* CART 
 * 2022 
-* v 0.1.0
+* v 0.1.1
 */
 
 
@@ -25,7 +25,7 @@
 }
 
 /* CART */
-.quantity {
+.quantity_design {
   height: 0;
   color: var(--text-color-inverted);
   font-size: var(--text-xl);

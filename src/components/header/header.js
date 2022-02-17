@@ -32,12 +32,6 @@ export function Header() {
    *  https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
    */
 
-  const cart_style = {
-    margin: "0 auto",
-    width: "25px",
-    height: "25px",
-  };
-
   return (
     <>
       <div>

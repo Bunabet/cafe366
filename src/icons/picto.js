@@ -16,7 +16,6 @@ export function Panier({classNameContainer}) {
   return(<Picto src={panier} alt="panier" to="/cart" classNameContainer={classNameContainer}/>)
 }
 
-
 export function Logo({classNameContainer}) {
   return (<Picto src={logo_366} alt="café 366" to="/" classNameContainer={classNameContainer}/>)
 }
