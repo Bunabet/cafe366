@@ -44,13 +44,13 @@ export function Header() {
         <div className={container}>
           {/* barre de navigation */}
           <header className={header}>
-          <Logo classNameContainer={logo}/>
+            <Logo classNameContainer={logo}/>
             <Menu/>
             {/* REASEARH */}
             {/* <Link to="/search" className={searchButton}>
               <SearchIcon />
             </Link> */}
-            <CartButton quantity={quantity} style={cart_style} classNameContainer={cart}/>
+            <CartButton quantity={quantity} classNameContainer={cart}/>
           </header>
           
           <Select show={loading || did_just_add_to_cart} >

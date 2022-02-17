@@ -38,12 +38,6 @@
   justify-self: flex-end;
 }
 
-@media (max-width: 640px) {
-  .header {
-    grid-template-areas: "logo menu_small cart";
-  }
-}
-
 
 /* LOGO / PICTO > BUTTON in this architecture */
 .logo {
@@ -91,4 +85,11 @@
 
 .searchButton[aria-current="page"] {
   color: var(--color_primary);
+}
+
+
+@media (max-width: 640px) {
+  .header {
+    grid-template-areas: "logo menu_small cart";
+  }
 }

@@ -1,9 +1,12 @@
+/**
+ * CART BUTTON
+ * 2022
+ * v 0.0.1
+ */
+// REACT
 import * as React from "react";
-// import { Link } from "gatsby";
-// import CartIcon from "../../icons/cart";
-// import { cartButton, badge } from "./cart_button.module.css";
+// CAFE 366
 import { quantity } from "./cart.module.css";
-
 import { Panier }  from "./../../icons/picto";
 
 function DisplayQuantity({num}) {
@@ -13,19 +16,8 @@ function DisplayQuantity({num}) {
 export function CartButton({ quantity, style, classNameContainer }) {
   return (
     <div >
-      <Panier stylePicto={style} classNameContainer={classNameContainer}/>
+      <Panier classNameContainer={classNameContainer}/>
       <DisplayQuantity num={quantity}/>
     </div>
   );
 }
-
-
-//   export function CartButton({ quantity, style, classNameContainer }) {
-//     return (
-//       <div>
-//         <Panier stylePicto={style} classNameContainer={classNameContainer}/>
-//         <DisplayQuantity num={quantity}/>
-//       </div>
-//     );
-// }
-

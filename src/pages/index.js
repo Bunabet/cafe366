@@ -34,11 +34,7 @@ export default function IndexPage({ data }) {
    *  https://www.joshwcomeau.com/react/persisting-react-state-in-localstorage/
    */
   SetConstants(r, brownser_is);
-  // useEffect(() => {
-  //   if (brownser_is) {
-  //     localStorage.setItem("constants", JSON.stringify(r));
-  //   }
-  // }, ["constants", r]);
+
   // language
   if (brownser_is) {
     localStorage.setItem("lang", "fr");

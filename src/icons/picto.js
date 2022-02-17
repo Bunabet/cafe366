@@ -12,8 +12,8 @@ import panier from "./../../media/picto/panier_blanc.svg";
 import tick from "./../../media/picto/tick.svg";
 
 
-export function Panier({style, classNameContainer, quantity}) {
-  return(<Picto src={panier} alt="panier" to="/cart" stylePicto={style} classNameContainer={classNameContainer}/>)
+export function Panier({classNameContainer}) {
+  return(<Picto src={panier} alt="panier" to="/cart" classNameContainer={classNameContainer}/>)
 }
 
 
