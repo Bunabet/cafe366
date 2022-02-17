@@ -20,7 +20,7 @@ export function CartButton({ quantity, classNameContainer }) {
   return (
     <div className={classNameContainer}>
       <Panier/>
-      {/* <div className={quantity_design}>{quantity}</div> */}
+      <div className={quantity_design}>{quantity}</div>
       {/* {quantity > 0 ? <div className={quantity_design}>{quantity}</div> : null} */}
     </div>
   );
