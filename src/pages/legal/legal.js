@@ -3,7 +3,7 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 // APP
 import { Layout } from "./../../components/layout/layout";
-import { SelectMD } from "./../../components/markdown";
+import { MarkdownDesign } from "./../../components/markdown";
 
 import { container, article } from "./legal.module.css";
 
@@ -34,7 +34,7 @@ function LegalContentFR() {
     <div>
       <div className={container}>
         {data.allContentfulPageLegale.edges.map(({ node }) => (
-          <SelectMD className={article} node={node.contenu.childMarkdownRemark} />
+          <MarkdownDesign className={article} node={node.contenu.childMarkdownRemark} />
         ))}
       </div>
     </div>

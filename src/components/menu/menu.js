@@ -9,7 +9,7 @@ import MenuSmall from "./menu_small";
 import MenuContent from "./menu_content";
 import { ContextMenu } from "../../context/context_menu";
 // UTILS
-import { Get_window } from "../../utils/canvas";
+import { Get_width } from "../../utils/canvas";
 
 /**
  * https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/
@@ -20,8 +20,8 @@ import { Get_window } from "../../utils/canvas";
 
 export function Menu() {
   const { switch_off_menu_small } = useContext(ContextMenu);
-  let res = Get_window();
-  if(res[0] > 640) {
+
+  if(Get_width() >= 640) {
     switch_off_menu_small();
     return (
       <nav className={[nav_style, menu_big].join(" ")}>

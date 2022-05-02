@@ -72,7 +72,7 @@
   /* radius */
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-rounded: 999px;
+  --radius-rounded: 16px;
 
   /* spacing */
   --space-sm: 4px;
@@ -117,6 +117,8 @@
 
   /* size display */
   --width_max: 1024px;
+  /* Something wronf with the 640px value that diffenrent between CSS and the Javascript part, smaller in JS */
+  --layout_max: 640px;
 
 
 
@@ -127,8 +129,9 @@
   --size-gutter-raw: var(--space-2xl);
   --size-gutter: calc(var(--size-gutter-raw) - 12px);
   --size_gutter_x2: calc(var(--size-gutter) * 2);
+  --size_picto_header: 48px;
   --size_logo: 48px;
-  --size_cart: 48px;
+  --size_cart: 40px;
   --size_menu_offset: calc(calc(var(--size_logo) * 0.25) * -1);
   --size_select: 125px;
   --height_header: 75px;

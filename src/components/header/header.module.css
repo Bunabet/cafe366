@@ -1,59 +1,77 @@
-
+/**
+* HEADER DESIGN
+* 2021-2022
+* V 0.1.2
+*/
 .container {
   display: flex;
   align-items: center;
   position: fixed;
   width: 100%;
-  /* height:100%; */
-  /* position: sticky; */
   z-index: 1;
   top: 0;
-  /* background-color: var(--noisette); */
   background-color: var(--background_header);
   /* border: solid 1px white; */
 }
 
 /* GLOBAL ARCHITECTURE */
 .header {
+  /* position: relative; */
   display: grid;
-  max-width:  var(--width_max);
+
+  max-width: var(--width_max);
   margin: 0 auto;
   width: 100%;
+  /* max-width: var(--layout_max); */
   padding: var(--size-gap) var(--size-gutter);
-  grid-template-columns: var(--size-input) 1fr min-content min-content;
-
-  grid-template-areas: "logo menu_big . . cart";
-  /* grid-template-areas: "cart menu_big . . logo"; */
-  /* background-color: var(--background_header); */
+  grid-template-columns: var(--size-input) 1fr;
+  /* grid-template-areas: "logo menu_small cart"; */
+  grid-template-areas: "logo menu_small user cart";
   /* border: solid 1px white; */
 }
 
 /* Ici, je ne comprends pas bien à quoi cela sert */
 .header::after {
-  grid-area: menu_big;
-  content: "";
+  grid-area: menu_small;
+  /* content: "";
   display: block;
   width: var(--space-2xl);
   z-index: 1;
   align-self: stretch;
-  justify-self: flex-end;
+  justify-self: flex-end; */
 }
 
 
 /* LOGO / PICTO > BUTTON in this architecture */
 .logo {
   grid-area: logo;
-  width: var(--size_logo);
-  height: var(--size_logo);
+  width: var(--size_picto_header);
+  height: var(--size_picto_header);
   place-items: center;
   /* border: solid 1px white; */
 }
 
-.cart {
+.cart_container {
   grid-area: cart;
+  width: var(--size_picto_header);
+  height: var(--size_picto_header);
+  place-items: center;
+  /* border: solid 1px white; */
+}
+
+.user_container {
+  grid-area: user;
+  width: var(--size_picto_header);
+  height: var(--size_picto_header);
+  place-items: center;
+  /* border: solid 1px white; */
+}
+
+.picto {
   width: var(--size_cart);
   height: var(--size_cart);
-  place-items: center;
+  transform: translatey(3px);
+  margin: 0 auto;
   /* border: solid 1px white; */
 }
 
@@ -61,7 +79,6 @@
 /* MENU CONTENT */
 .menu_big {
   grid-area: menu_big;
-  align-self: stretch;
   /* border: solid 1px white; */
 }
 
@@ -89,9 +106,14 @@
 }
 
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .header {
-    grid-template-areas: "logo menu_small cart";
-    /* grid-template-areas: "cart menu_small logo"; */
+    /* grid-template-areas: "logo menu_big cart"; */
+    grid-template-areas: "logo menu_big user cart";
+    grid-gap: var(--size-gap);
+  }
+
+  .header::after {
+    grid-area: menu_big;
   }
 }

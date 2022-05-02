@@ -8,6 +8,8 @@ import { Footer } from "../footer/footer";
 import { Seo } from "../seo";
 import { DisplayMenuSmall } from "./../menu/menu_small";
 
+import {container} from "./layout.css";
+
 function DisplayContent({ children }) {
   const { menu_small_is } = useContext(ContextMenu);
   return (<>{!menu_small_is ? <>
@@ -21,16 +23,19 @@ export function Layout({ children }) {
 
   return (
     <div>
+    {/* <div className={container}> */}
       <Seo />
       {/* A quoi sert SkipNavLink ????? */}
       {/* <SkipNavLink /> */}
       <ProviderMenu>
-          <Header/>
-          {/* WHY I MUST PASS BY style NOT BY className ???? */}
-          <div style={{transform: 'translateY(75px)'}}>
-            <DisplayMenuSmall/>
-            <DisplayContent>{children}</DisplayContent>
-          </div>
+        <Header/>
+        {/* WHY I MUST PASS BY style NOT BY className ???? */}
+        {/* <div> */}
+        <div style={{transform: 'translateY(75px)'}}>
+          <DisplayMenuSmall/>
+          <DisplayContent>{children}</DisplayContent>
+        </div>
+
       </ProviderMenu>
     </div>
   );

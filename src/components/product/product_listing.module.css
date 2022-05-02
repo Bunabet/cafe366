@@ -1,7 +1,13 @@
-.listingContainerStyle {
+/**
+* LISTING PRODUCT
+* 2021-2022
+* v 0.1.0
+*
+*/
+.listing_container {
   display: grid;
   grid-template-columns: var(--product-grid);
-  place-items: center;
+  place-items: top;
   gap: var(--size-gutter-raw);
   padding: 0 var(--size-gutter-raw);
 }

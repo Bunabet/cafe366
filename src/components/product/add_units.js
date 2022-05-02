@@ -1,7 +1,7 @@
 /**
  * Fiche produit
  * ADD unit
- * v 0.0.1
+ * v 0.0.2
  * 2022-2022
  *
  */
@@ -14,7 +14,7 @@ import { NumericInput } from "../numeric_input";
 import { add_to_cart } from "./product_order_page.module.css";
 
 
-export function AddUnits({productVariant, available}) {
+export function AddUnits({productVariant, stock_is}) {
   const [quantity, setQuantity] = useState(1);
 
   return (
@@ -31,7 +31,7 @@ export function AddUnits({productVariant, available}) {
 			<AddToCart
 				variantId={productVariant.storefrontId}
 				quantity={quantity}
-				available={available}
+				stock_is={stock_is}
 			/>
 		</div>
 	)

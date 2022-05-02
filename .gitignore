@@ -1,10 +1,30 @@
 node_modules/
+
+# Gatsby files
 .cache/
+
 public
 .idea
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
 .vscode
+
 .DS_Store
+
+# dotenv environment variable files
 .env
+.env.development
+
 *.log
 yarn.lock
 gatsby-node.old.js
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

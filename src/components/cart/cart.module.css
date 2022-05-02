@@ -31,5 +31,5 @@
   font-size: var(--text-xl);
   font-weight: var(--bold);
   text-align: center;
-  transform: translatey(calc(calc(var(--size_cart) *-1) + calc(var(--text-xl) *0.28)));
+  transform: translatey(calc(calc(var(--size_cart) *-1) + calc(var(--text-xl) *0.23)));
 }

@@ -1,7 +1,7 @@
 /**
  * FICHE PRODUIT COMMANDE / ORDER / DESIGN
- * v 0.0.1
- * 2022
+ * v 0.0.2
+ * 2022-2022
  *
  */
  
@@ -39,6 +39,14 @@
   padding-bottom: var(--space-lg);
 }
 
+.select_title {
+  font-size: var(--text-lg);
+}
+
+.select_title:first-letter {
+  text-transform:uppercase;
+}
+
 .select_variant {
   background-color: var(--input-background);
   border-radius: var(--radius-md);
@@ -54,7 +62,7 @@
   border: none;
   color: var(--input-text);
   cursor: inherit;
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   font-weight: var(--medium);
   height: var(--size-input);
   margin: 0;

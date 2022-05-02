@@ -1,6 +1,6 @@
 /* ADD TO CART 
 * 2021-2022 
-* v 0.1.1
+* v 0.1.2
 */
 // REACT
 import * as React from "react";
@@ -10,10 +10,9 @@ import { ContextStore } from "../../context/context_store";
 import { addToCart as className_add_to_cart } from "./cart.module.css";
 import { content_by_lang } from "../../utils/misc";
 import content from "../../../media/json/content.json";
-
 import {Get_width} from "./../../utils/canvas.js";
 
-export function AddToCart({ variantId, quantity, available, ...props }) {
+export function AddToCart({ variantId, quantity, stock_is, ...props }) {
   const { add_item_to_cart, loading } = useContext(ContextStore);
 
   function add_to_cart(e) {
@@ -39,10 +38,10 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
       type="submit"
       className={className_add_to_cart}
       onClick={add_to_cart}
-      disabled={!available || loading}
+      disabled={!stock_is || loading}
       {...props}
     >
-      {available ? add : empty}
+      {stock_is ? add : empty}
     </button>
   );
 }

@@ -2,10 +2,11 @@
   background-color: var(--color_primary);
   color: var(--text-color-inverted);
   width: max-content;
+  height:calc(var(--size_picto_header) + var(--space-lg));
   position: absolute;
   right: var(--space-xl);
-  bottom: 0;
-  padding: var(--space-md) var(--space-lg);
+  /* bottom: 0; */
+  padding: var(--space-md) var(--space-md);
   font-size: var(--text-lg);
   font-weight: var(--semibold);
   border-radius: var(--radius-rounded);
@@ -13,10 +14,11 @@
   flex-direction: row;
   align-items: center;
   gap: var(--space-sm);
-  min-width:--size_select;
+  min-width:var(--size_select);
   justify-content: center;
   z-index: 10;
   white-space: nowrap;
+  border: solid 3px white;
 }
 
 @keyframes showing {
@@ -56,6 +58,6 @@
 
 .animation {
 	margin: 0 auto;
-	width: --size_select;
-	height:50px;
+	width:var(--size_select);
+	/* height:var(--size_picto_header); */
 }

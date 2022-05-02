@@ -7,7 +7,7 @@
 
 import React from "react";
 
-export function SelectMD({ className, node, title }) {
+export function MarkdownDesign({ className, node, title }) {
   if (node.frontmatter.title.includes(title) || title === undefined) {
     return (
       <div

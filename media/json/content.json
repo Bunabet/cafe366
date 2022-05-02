@@ -73,7 +73,12 @@
     {
       "name": "select",
       "label_en": "select",
-      "label_fr": "sélection:"
+      "label_fr": "sélection"
+    },
+    {
+      "name": "grind",
+      "label_en": "grinding",
+      "label_fr": "mouture"
     },
     {
       "name": "your cart",
@@ -119,6 +124,11 @@
       "name": "quantity",
       "label_en": "quantity",
       "label_fr": "quantité"
+    },
+    {
+      "name": "nothing",
+      "label_en": "not available",
+      "label_fr": "non disponible"
     },
     {
       "name": "calculated",

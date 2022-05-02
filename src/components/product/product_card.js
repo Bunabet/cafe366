@@ -1,3 +1,8 @@
+/**
+ * CARD PRODUCT DESIGN
+ *  2021-2022
+ * v 0.1.0
+ * */
 import * as React from "react";
 // gatsby
 import { graphql, Link } from "gatsby";
@@ -7,10 +12,10 @@ import { getShopifyImage } from "gatsby-source-shopify";
 import { formatPrice } from "../../utils/format_price";
 import {
   productCardStyle,
-  productHeadingStyle,
+  product_title,
   productImageStyle,
   productDetailsStyle,
-  productPrice,
+  product_price,
 } from "./product_card.module.css";
 
 export function ProductCard({ product, eager }) {
@@ -54,6 +59,7 @@ export function ProductCard({ product, eager }) {
       aria-label={`View ${title} product page`}
     >
       {hasImage ? (
+        // mais qu'est-ce que c'est ?   data-name="product-image-box"
         <div className={productImageStyle} data-name="product-image-box">
           <GatsbyImage
             alt={firstImage?.altText ?? title}
@@ -65,10 +71,10 @@ export function ProductCard({ product, eager }) {
         <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
       )}
       <div className={productDetailsStyle}>
-        <h2 as="h2" className={productHeadingStyle}>
+        <h2 as="h2" className={product_title}>
           {title}
         </h2>
-        <div className={productPrice}>{price}</div>
+        <div className={product_price}>{price}</div>
       </div>
     </Link>
   );

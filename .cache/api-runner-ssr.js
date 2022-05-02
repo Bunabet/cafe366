@@ -1,18 +1,18 @@
 var plugins = [{
       name: 'gatsby-plugin-image',
-      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-image/gatsby-ssr'),
+      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-image/gatsby-ssr.js'),
       options: {"plugins":[]},
     },{
       name: 'gatsby-plugin-react-helmet',
-      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
+      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-react-helmet/gatsby-ssr.js'),
       options: {"plugins":[]},
     },{
       name: 'gatsby-plugin-sitemap',
-      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
+      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-sitemap/gatsby-ssr.js'),
       options: {"plugins":[],"output":"/sitemap","createLinkInHead":true,"entryLimit":45000,"query":"{ site { siteMetadata { siteUrl } } allSitePage { nodes { path } } }","excludes":[]},
     },{
       name: 'gatsby-plugin-gatsby-cloud',
-      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-gatsby-cloud/gatsby-ssr'),
+      plugin: require('/Users/stanislasmarcais/EN_COURS/CODE/github/PROJET/cafe366/node_modules/gatsby-plugin-gatsby-cloud/gatsby-ssr.js'),
       options: {"plugins":[]},
     }]
 /* global plugins */

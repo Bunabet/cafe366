@@ -1,10 +1,15 @@
+/**
+ * MENU CONTENT
+ * 2022-2022
+ * v 0.1.2
+*/
 // REACT
 import * as React from "react";
 import { useState } from "react";
 // GATSBY
 import { Link } from "gatsby";
 // CAFE 366
-import { nav_link, active_link } from "./menu.module.css";
+import { nav_link, active_link, container } from "./menu.module.css";
 import content from "../../../media/json/content.json";
 import { content_by_lang } from "../../utils/misc";
 import GetPages from "./get_pages";
@@ -17,12 +22,12 @@ import LinkMenu from "./link_menu";
  * 
  */
 
-
 function RenderBig() {
   const prods = useState(content_by_lang(content.collection, "all products", "ALL PRODUCTS"));
 
   return(
     <>
+      <div></div>
       {GetCollections().map((elem) => {
       if (elem.handle !== "frontpage") {
         return <LinkMenu id={elem.handle} path="/collection/" title={elem.title}/>;
@@ -37,14 +42,19 @@ function RenderBig() {
         {prods}
       </Link>
       {GetPages().map((elem) => {
-        return <LinkMenu id={elem.id} path={"/misc/"} title={elem.titre} />;
+        if(elem.menu !== undefined) {
+          return <LinkMenu id={elem.titre} path={"/misc/"} title={elem.menu} />;
+        } else if(elem.titre !== undefined) {
+          return <LinkMenu id={elem.titre} path={"/misc/"} title={elem.titre} />;
+        }
       })}
+      <div></div>
     </>)
 }
 
 
 function RenderSmall() {
-  const prods = useState(content_by_lang(content.collection, "all products", "ALL PRODUCTS"));
+  const prods = useState(content_by_lang(content.collection, "all products", ""));
 
   return(
     <div>
@@ -62,7 +72,11 @@ function RenderSmall() {
         {prods}
       </Link>
       {GetPages().map((elem) => {
-        return <LinkMenu id={elem.id} path={"/misc/"} title={elem.titre} />;
+        if(elem.menu !== undefined) {
+          return <LinkMenu id={elem.titre} path={"/misc/"} title={elem.menu} />;
+        } else if(elem.titre !== undefined) {
+          return <LinkMenu id={elem.titre} path={"/misc/"} title={elem.titre} />;
+        }
       })}
     </div>
   )

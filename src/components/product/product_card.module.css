@@ -1,5 +1,10 @@
-.productCardStyle {
-  max-width: 400px;
+/**
+ * CARD PRODUCT DESIGN
+ *  2021-2022
+ * v 0.1.1
+ * */
+ .productCardStyle {
+  max-width: 600px;
   cursor: pointer;
   text-decoration: none;
   padding-bottom: var(--space-md);
@@ -17,20 +22,28 @@
   font-weight: var(--semibold);
 }
 
-.productHeadingStyle {
+.product_title {
   width: 100%;
   font-size: var(--text-lg);
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: var(--dense);
 }
 
-.productPrice {
+.product_price {
+  width: 100%;
   color: var(--text-color-secondary);
+  text-align: left;
 }
 
 .productVendorStyle {
   font-size: var(--text-sm);
   color: var(--text-color-secondary);
+}
+
+@media (min-width: 640px) {
+  .productCardStyle {
+    max-width: 400px;
+  }
 }
