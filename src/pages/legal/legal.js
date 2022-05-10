@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Layout } from "./../../components/layout/layout";
 import { MarkdownDesign } from "./../../components/markdown";
 
-import { container, article } from "./legal.module.css";
+import { container, article } from "./../../css/article.module.css";
 
 function LegalContentFR() {
   const data = useStaticQuery(

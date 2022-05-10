@@ -1,3 +1,9 @@
+/**
+ * CONTENFUL EDITORIAL
+ * 2022-2022
+ * v 0.1.0
+ * */
+
 /// REACT
 import * as React from "react";
 // GATSBY
@@ -6,10 +12,11 @@ import { GatsbyImage } from "gatsby-plugin-image";
 // CAFE 366
 import { Layout } from "../../components/layout/layout";
 import { MarkdownDesign } from "../../components/markdown";
-import { container, container_image,
-          image, article } from "./misc_page.module.css";
-import { FormPro } from "../../components/form/form_pro";
 
+import { container, article,
+        container_image, image } from "./../../css/article.module.css";
+
+import { FormPro } from "../../components/form/form_pro";
 
 
 

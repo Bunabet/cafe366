@@ -1,3 +1,9 @@
+/**
+ * CGV
+ * 2022-2022
+ * v 0.1.0
+ * */
+
 import * as React from "react";
 // gatsby
 import { useStaticQuery, graphql } from "gatsby";
@@ -5,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Layout } from "./../../components/layout/layout";
 import { MarkdownDesign } from "./../../components/markdown";
 
-import { container, article } from "./legal.module.css";
+import { container, article } from "./../../css/article.module.css";
 
 function CGVContentFR() {
   const data = useStaticQuery(
