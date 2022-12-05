@@ -126,15 +126,22 @@
   
   --size-input: var(--space-3xl);
   --size-gap: 12px;
+
   --size-gutter-raw: var(--space-2xl);
   --size-gutter: calc(var(--size-gutter-raw) - 12px);
   --size_gutter_x2: calc(var(--size-gutter) * 2);
-  --size_picto_header: 48px;
-  --size_logo: 48px;
-  --size_cart: 40px;
+  /* header variable */
+  --size_cell_header: 48px;
+  --size_picto_header: var(--size_cell_header);
+  --size_logo_header_width: calc(var(--size_cell_header) *3.5);
+  --size_logo_header_height: var(--size_cell_header);
+  --size_cart: calc(var(--size_cell_header) *0.8);
+  --size_menu_header_text_width: calc(var(--size_cell_header) *12);
+
   --size_menu_offset: calc(calc(var(--size_logo) * 0.25) * -1);
-  --size_select: 125px;
   --height_header: 75px;
+
+  --size_select: 125px;
 
   /* product */
   --product-grid: 1fr;

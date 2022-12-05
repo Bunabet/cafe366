@@ -1,3 +1,9 @@
+/**
+ * LEGAL
+ * 2022-2022
+ * v 0.1.0
+ * */
+
 import * as React from "react";
 // gatsby
 import { useStaticQuery, graphql } from "gatsby";

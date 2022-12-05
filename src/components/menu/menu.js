@@ -6,10 +6,10 @@ import { nav_style } from "./menu.module.css";
 import { menu_big, menu_small } from "../header/header.module.css";
 // CAFÉ 366
 import MenuSmall from "./menu_small";
-import MenuContent from "./menu_content";
+import MenuBig from "./menu_big";
 import { ContextMenu } from "../../context/context_menu";
 // UTILS
-import { Get_width } from "../../utils/canvas";
+import { Window_is_big } from "../../utils/canvas";
 
 /**
  * https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/
@@ -20,12 +20,11 @@ import { Get_width } from "../../utils/canvas";
 
 export function Menu() {
   const { switch_off_menu_small } = useContext(ContextMenu);
-
-  if(Get_width() >= 640) {
+  if(Window_is_big(780)) {
     switch_off_menu_small();
     return (
       <nav className={[nav_style, menu_big].join(" ")}>
-        <MenuContent/> 
+        <MenuBig/> 
       </nav>
     );
   } else {

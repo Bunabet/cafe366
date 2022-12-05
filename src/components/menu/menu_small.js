@@ -5,7 +5,7 @@ import { Fragment, useContext } from "react";
 // CAFÉ 366
 import { ContextMenu } from "../../context/context_menu";
 
-import MenuContent from "./menu_content"
+import MenuContent from "./menu_big"
 import {  toggle_menu, 
           menu_display, menu_display_open, 
           offset_text,

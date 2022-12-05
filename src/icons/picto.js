@@ -9,7 +9,9 @@ import * as React from "react";
 import { Picto } from "./../components/button/button";
 
 // logo
-import logo_366 from "./../../media/logo/cafe366_logo_blanc.svg";
+import logo_366_square from "./../../media/logo/cafe366_logo_blanc_square.svg";
+import logo_366_long from "./../../media/logo/cafe366_logo_blanc_long.svg";
+
 import instagram from "./../../media/logo/instagram_2016_blanc.svg";
 import facebook from "./../../media/logo/facebook_2021_blanc.svg";
 //picto
@@ -22,8 +24,12 @@ export function Panier({styleContainer, classNameContainer, classNamePicto}) {
   return(<Picto src={panier} alt="panier" to="/cart" styleContainer={styleContainer} classNameContainer={classNameContainer} classNamePicto={classNamePicto}/>)
 }
 
-export function Logo({styleContainer, classNameContainer}) {
-  return (<Picto src={logo_366} alt="café 366" to="/" styleContainer={styleContainer} classNameContainer={classNameContainer}/>)
+export function LogoLong({styleContainer, classNameContainer}) {
+  return (<Picto src={logo_366_long} alt="café 366" to="/" styleContainer={styleContainer} classNameContainer={classNameContainer}/>)
+}
+
+export function LogoSquare({styleContainer, classNameContainer}) {
+  return (<Picto src={logo_366_square} alt="café 366" to="/" styleContainer={styleContainer} classNameContainer={classNameContainer}/>)
 }
 
 export function User({styleContainer, classNameContainer}) {

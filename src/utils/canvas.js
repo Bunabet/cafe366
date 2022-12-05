@@ -40,3 +40,11 @@ export function Get_width() {
 export function Get_height() {
   return Get_window()[1];
 }
+
+export function Window_is_big(value) {
+  let res = false;
+  if(Get_width() >= value) {
+    res = true;
+  }
+  return res;
+}
