@@ -20,6 +20,9 @@ export function Get_window() {
   const [size, set_size] = useState(canvas)
   useRef(size)
 
+  // MAY be the problem is here ????
+  // Error in function throwOnHydrationMismatch in ./node_modules/react-dom/cjs/react-dom.development.js:12507
+  
   useLayoutEffect(() => {
     function window_resize(event) {
       set_canvas(canvas)
