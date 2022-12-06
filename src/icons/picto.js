@@ -1,6 +1,6 @@
 /**
  * PICTO
- * v 0.1.1
+ * v 0.1.2
  * 2021-2022
  * */
 import * as React from "react";

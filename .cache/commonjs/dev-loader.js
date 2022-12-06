@@ -54,6 +54,8 @@ class DevLoader extends _loader.BaseLoader {
           this.handleStaticQueryResultHotUpdate(msg);
         } else if (msg.type === `pageQueryResult`) {
           this.handlePageQueryResultHotUpdate(msg);
+        } else if (msg.type === `sliceQueryResult`) {
+          this.handleSliceQueryResultHotUpdate(msg);
         } else if (msg.type === `stalePageData`) {
           this.handleStalePageDataMessage(msg);
         } else if (msg.type === `staleServerData`) {
@@ -94,7 +96,7 @@ class DevLoader extends _loader.BaseLoader {
   }
 
   doPrefetch(pagePath) {
-    if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND) {
+    if (process.env.GATSBY_QUERY_ON_DEMAND) {
       return Promise.resolve();
     }
 
@@ -110,6 +112,37 @@ class DevLoader extends _loader.BaseLoader {
       this.staticQueryDb[cacheKey] = newResult;
 
       ___emitter.emit(`staticQueryResult`, newResult);
+    }
+  }
+
+  handleSliceQueryResultHotUpdate(msg) {
+    const newResult = msg.payload.result;
+    const cacheKey = msg.payload.id; // raw json db
+
+    {
+      const cachedResult = this.slicesDataDb.get(cacheKey);
+
+      if (!(0, _isEqual.default)(newResult, cachedResult)) {
+        this.slicesDataDb.set(cacheKey, newResult);
+      }
+    } // processed data
+
+    {
+      var _newResult$result, _newResult$result2;
+
+      const cachedResult = this.slicesDb.get(cacheKey);
+
+      if (!(0, _isEqual.default)(newResult === null || newResult === void 0 ? void 0 : (_newResult$result = newResult.result) === null || _newResult$result === void 0 ? void 0 : _newResult$result.data, cachedResult === null || cachedResult === void 0 ? void 0 : cachedResult.data) || !(0, _isEqual.default)(newResult === null || newResult === void 0 ? void 0 : (_newResult$result2 = newResult.result) === null || _newResult$result2 === void 0 ? void 0 : _newResult$result2.sliceContext, cachedResult === null || cachedResult === void 0 ? void 0 : cachedResult.sliceContext)) {
+        var _newResult$result3, _newResult$result4;
+
+        const mergedResult = { ...cachedResult,
+          data: newResult === null || newResult === void 0 ? void 0 : (_newResult$result3 = newResult.result) === null || _newResult$result3 === void 0 ? void 0 : _newResult$result3.data,
+          sliceContext: newResult === null || newResult === void 0 ? void 0 : (_newResult$result4 = newResult.result) === null || _newResult$result4 === void 0 ? void 0 : _newResult$result4.sliceContext
+        };
+        this.slicesDb.set(cacheKey, mergedResult);
+
+        ___emitter.emit(`sliceQueryResult`, mergedResult);
+      }
     }
   }
 

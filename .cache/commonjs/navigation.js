@@ -27,8 +27,6 @@ var _routeAnnouncerProps = require("./route-announcer-props");
 
 var _reachRouter = require("@gatsbyjs/reach-router");
 
-var _history = require("@gatsbyjs/reach-router/lib/history");
-
 var _gatsbyLink = require("gatsby-link");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -78,7 +76,7 @@ const onRouteUpdate = (location, prevLocation) => {
       prevLocation
     });
 
-    if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+    if (process.env.GATSBY_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
       _emitter.default.emit(`onRouteUpdate`, {
         location,
         prevLocation
@@ -92,7 +90,7 @@ const navigate = (to, options = {}) => {
   // navigate(-2) (jumps back 2 history steps)
   // navigate(2)  (jumps forward 2 history steps)
   if (typeof to === `number`) {
-    _history.globalHistory.navigate(to);
+    _reachRouter.globalHistory.navigate(to);
 
     return;
   }
@@ -207,7 +205,7 @@ function shouldUpdateScroll(prevRouterProps, {
 function init() {
   // The "scroll-behavior" package expects the "action" to be on the location
   // object so let's copy it over.
-  _history.globalHistory.listen(args => {
+  _reachRouter.globalHistory.listen(args => {
     args.location.action = args.action;
   });
 

@@ -34,7 +34,7 @@ var _ssrSyncRequires = _interopRequireDefault(require("$virtual/ssr-sync-require
 
 var _routeAnnouncerProps = require("./route-announcer-props");
 
-var _router = require("@reach/router");
+var _reachRouter = require("@gatsbyjs/reach-router");
 
 var _headExportHandlerForSsr = require("./head/head-export-handler-for-ssr");
 
@@ -270,9 +270,9 @@ async function staticPage({
 
     }
 
-    const routerElement = _ssrSyncRequires.default.ssrComponents[componentChunkName] && !isClientOnlyPage ? /*#__PURE__*/_react.default.createElement(_router.ServerLocation, {
+    const routerElement = _ssrSyncRequires.default.ssrComponents[componentChunkName] && !isClientOnlyPage ? /*#__PURE__*/_react.default.createElement(_reachRouter.ServerLocation, {
       url: `${__BASE_PATH__}${pagePath}`
-    }, /*#__PURE__*/_react.default.createElement(_router.Router, {
+    }, /*#__PURE__*/_react.default.createElement(_reachRouter.Router, {
       id: "gatsby-focus-wrapper",
       baseuri: __BASE_PATH__
     }, /*#__PURE__*/_react.default.createElement(RouteHandler, {
@@ -308,7 +308,7 @@ async function staticPage({
         bodyHtml = (0, _server.renderToString)(bodyComponent);
       } catch (e) {
         // ignore @reach/router redirect errors
-        if (!(0, _router.isRedirect)(e)) throw e;
+        if (!(0, _reachRouter.isRedirect)(e)) throw e;
       }
     }
 

@@ -12,7 +12,9 @@ var _reachRouter = require("@gatsbyjs/reach-router");
 
 var _gatsbyReactRouterScroll = require("gatsby-react-router-scroll");
 
-var _gatsby = require("gatsby");
+var _staticQuery = require("./static-query");
+
+var _context = require("./slice/context");
 
 var _navigation = require("./navigation");
 
@@ -69,6 +71,10 @@ const reloadStorageKey = `gatsby-reload-compilation-hash-match`;
 
   const DataContext = /*#__PURE__*/_react.default.createContext({});
 
+  const slicesContext = {
+    renderEnvironment: `browser`
+  };
+
   class GatsbyRoot extends _react.default.Component {
     render() {
       const {
@@ -82,24 +88,22 @@ const reloadStorageKey = `gatsby-reload-compilation-hash-match`;
         pageResources,
         location
       }) => {
-        if (pageResources.partialHydration) {
-          return /*#__PURE__*/_react.default.createElement(DataContext.Provider, {
-            value: {
-              pageResources,
-              location
-            }
-          }, children);
-        } else {
-          const staticQueryResults = (0, _loader.getStaticQueryResults)();
-          return /*#__PURE__*/_react.default.createElement(_gatsby.StaticQueryContext.Provider, {
-            value: staticQueryResults
-          }, /*#__PURE__*/_react.default.createElement(DataContext.Provider, {
-            value: {
-              pageResources,
-              location
-            }
-          }, children));
-        }
+        const staticQueryResults = (0, _loader.getStaticQueryResults)();
+        const sliceResults = (0, _loader.getSliceResults)();
+        return /*#__PURE__*/_react.default.createElement(_staticQuery.StaticQueryContext.Provider, {
+          value: staticQueryResults
+        }, /*#__PURE__*/_react.default.createElement(_context.SlicesContext.Provider, {
+          value: slicesContext
+        }, /*#__PURE__*/_react.default.createElement(_context.SlicesResultsContext.Provider, {
+          value: sliceResults
+        }, /*#__PURE__*/_react.default.createElement(_context.SlicesMapContext.Provider, {
+          value: pageResources.page.slicesMap
+        }, /*#__PURE__*/_react.default.createElement(DataContext.Provider, {
+          value: {
+            pageResources,
+            location
+          }
+        }, children)))));
       }));
     }
 

@@ -3,7 +3,7 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
-exports.StaticQueryStore = exports.PageQueryStore = void 0;
+exports.StaticQueryStore = exports.SliceDataStore = exports.PageQueryStore = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -18,6 +18,8 @@ var _pageRenderer = _interopRequireDefault(require("./page-renderer"));
 var _normalizePagePath = _interopRequireDefault(require("./normalize-page-path"));
 
 var _loader = _interopRequireWildcard(require("./loader"));
+
+var _context = require("./slice/context");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -164,3 +166,45 @@ class StaticQueryStore extends _react.default.Component {
 }
 
 exports.StaticQueryStore = StaticQueryStore;
+
+class SliceDataStore extends _react.default.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slicesData: new Map((0, _loader.getSliceResults)())
+    };
+  }
+
+  handleMittEvent = () => {
+    this.setState({
+      slicesData: new Map((0, _loader.getSliceResults)())
+    });
+  };
+
+  componentDidMount() {
+    ___emitter.on(`sliceQueryResult`, this.handleMittEvent);
+
+    ___emitter.on(`onPostLoadPageResources`, this.handleMittEvent);
+  }
+
+  componentWillUnmount() {
+    ___emitter.off(`sliceQueryResult`, this.handleMittEvent);
+
+    ___emitter.off(`onPostLoadPageResources`, this.handleMittEvent);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // We want to update this component when:
+    // - slice results changed
+    return this.state.slicesData !== nextState.slicesData;
+  }
+
+  render() {
+    return /*#__PURE__*/_react.default.createElement(_context.SlicesResultsContext.Provider, {
+      value: this.state.slicesData
+    }, this.props.children);
+  }
+
+}
+
+exports.SliceDataStore = SliceDataStore;

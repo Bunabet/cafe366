@@ -52,40 +52,22 @@ const loader = new _devLoader.default(_asyncRequires.default, _matchPaths.defaul
 (0, _loader.setLoader)(loader);
 loader.setApiRunner(_apiRunnerBrowser.apiRunner);
 window.___loader = _loader.publicLoader;
-let reactFirstRenderOrHydrate;
 
-if (HAS_REACT_18) {
-  const reactDomClient = require(`react-dom/client`);
+const reactDomClient = require(`react-dom/client`);
 
-  reactFirstRenderOrHydrate = (Component, el) => {
-    // we will use hydrate if mount element has any content inside
-    const useHydrate = el && el.children.length;
+const reactFirstRenderOrHydrate = (Component, el) => {
+  // we will use hydrate if mount element has any content inside
+  const useHydrate = el && el.children.length;
 
-    if (useHydrate) {
-      const root = reactDomClient.hydrateRoot(el, Component);
-      return () => root.unmount();
-    } else {
-      const root = reactDomClient.createRoot(el);
-      root.render(Component);
-      return () => root.unmount();
-    }
-  };
-} else {
-  const reactDomClient = require(`react-dom`);
-
-  reactFirstRenderOrHydrate = (Component, el) => {
-    // we will use hydrate if mount element has any content inside
-    const useHydrate = el && el.children.length;
-
-    if (useHydrate) {
-      reactDomClient.hydrate(Component, el);
-      return () => _reactDom.default.unmountComponentAtNode(el);
-    } else {
-      reactDomClient.render(Component, el);
-      return () => _reactDom.default.unmountComponentAtNode(el);
-    }
-  };
-} // Do dummy dynamic import so the jsonp __webpack_require__.e is added to the commons.js
+  if (useHydrate) {
+    const root = reactDomClient.hydrateRoot(el, Component);
+    return () => root.unmount();
+  } else {
+    const root = reactDomClient.createRoot(el);
+    root.render(Component);
+    return () => root.unmount();
+  }
+}; // Do dummy dynamic import so the jsonp __webpack_require__.e is added to the commons.js
 // bundle. This ensures hot reloading doesn't break when someone first adds
 // a dynamic import.
 //
@@ -128,7 +110,7 @@ function notCalledFunction() {
   const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, reactFirstRenderOrHydrate)[0];
   let dismissLoadingIndicator;
 
-  if (process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
+  if (process.env.GATSBY_QUERY_ON_DEMAND && process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`) {
     let indicatorMountElement;
     let cleanupFn;
     const showIndicatorTimeout = setTimeout(() => {

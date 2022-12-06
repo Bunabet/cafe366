@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 exports.__esModule = true;
 exports.formatFilename = formatFilename;
-exports.getCodeFrameInformation = getCodeFrameInformation;
+exports.getCodeFrameInformationFromStackTrace = getCodeFrameInformationFromStackTrace;
 exports.getLineNumber = getLineNumber;
 exports.openInEditor = openInEditor;
 exports.prettifyStack = prettifyStack;
@@ -45,7 +45,7 @@ function skipSSR() {
   }
 }
 
-function getCodeFrameInformation(stackTrace) {
+function getCodeFrameInformationFromStackTrace(stackTrace) {
   const stackFrame = stackTrace.find(stackFrame => {
     const fileName = stackFrame.getFileName();
     return fileName && fileName !== `[native code]`; // Quirk of Safari error stack frames

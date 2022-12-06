@@ -23,26 +23,36 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function getCodeFrameInformationFromError(error) {
+  if (error.forcedLocation) {
+    return {
+      skipSourceMap: true,
+      moduleId: error.forcedLocation.fileName,
+      functionName: error.forcedLocation.functionName,
+      lineNumber: error.forcedLocation.lineNumber,
+      columnNumber: error.forcedLocation.columnNumber,
+      endLineNumber: error.forcedLocation.endLineNumber,
+      endColumnNumber: error.forcedLocation.endColumnNumber
+    };
+  }
+
+  const stacktrace = _errorStackParser.default.parse(error);
+
+  return (0, _utils.getCodeFrameInformationFromStackTrace)(stacktrace);
+}
+
 function WrappedAccordionItem({
   error,
   open
 }) {
   var _res$sourcePosition;
 
-  const stacktrace = _errorStackParser.default.parse(error);
-
-  const codeFrameInformation = (0, _utils.getCodeFrameInformation)(stacktrace);
+  const codeFrameInformation = getCodeFrameInformationFromError(error);
   const modulePath = codeFrameInformation === null || codeFrameInformation === void 0 ? void 0 : codeFrameInformation.moduleId;
-  const lineNumber = codeFrameInformation === null || codeFrameInformation === void 0 ? void 0 : codeFrameInformation.lineNumber;
-  const columnNumber = codeFrameInformation === null || codeFrameInformation === void 0 ? void 0 : codeFrameInformation.columnNumber;
   const name = codeFrameInformation === null || codeFrameInformation === void 0 ? void 0 : codeFrameInformation.functionName; // With the introduction of Metadata management the modulePath can have a resourceQuery that needs to be removed first
 
   const filePath = modulePath.replace(/(\?|&)export=(default|head)$/, ``);
-  const res = (0, _hooks.useStackFrame)({
-    moduleId: modulePath,
-    lineNumber,
-    columnNumber
-  });
+  const res = (0, _hooks.useStackFrame)(codeFrameInformation);
   const line = (_res$sourcePosition = res.sourcePosition) === null || _res$sourcePosition === void 0 ? void 0 : _res$sourcePosition.line;
 
   const Title = () => {

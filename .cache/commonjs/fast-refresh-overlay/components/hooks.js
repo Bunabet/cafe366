@@ -24,9 +24,25 @@ const initialResponse = {
 function useStackFrame({
   moduleId,
   lineNumber,
-  columnNumber
+  columnNumber,
+  skipSourceMap,
+  endLineNumber,
+  endColumnNumber
 }) {
-  const url = `/__original-stack-frame?moduleId=` + window.encodeURIComponent(moduleId) + `&lineNumber=` + window.encodeURIComponent(lineNumber) + `&columnNumber=` + window.encodeURIComponent(columnNumber);
+  let url = `/__original-stack-frame?moduleId=` + window.encodeURIComponent(moduleId) + `&lineNumber=` + window.encodeURIComponent(lineNumber) + `&columnNumber=` + window.encodeURIComponent(columnNumber);
+
+  if (skipSourceMap) {
+    url += `&skipSourceMap=true`;
+  }
+
+  if (endLineNumber) {
+    url += `&endLineNumber=` + window.encodeURIComponent(endLineNumber);
+
+    if (endColumnNumber) {
+      url += `&endColumnNumber=` + window.encodeURIComponent(endColumnNumber);
+    }
+  }
+
   const [response, setResponse] = React.useState(initialResponse);
   React.useEffect(() => {
     async function fetchData() {
